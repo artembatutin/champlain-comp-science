@@ -1,0 +1,25 @@
+body {
+	background-color: black;
+}
+
+a, p, ul {
+	color: white;
+	font-family: Arial, Helvetica
+}
+
+h1, h2 {
+	color: gold;
+}
+
+footer {
+	text-align: center;
+	color: white;
+	background-color: brown;
+}
+
+ul {
+    list-style-image: url('l.png');
+}
+
+
+
