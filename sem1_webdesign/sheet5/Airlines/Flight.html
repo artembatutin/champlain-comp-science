@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- 	<meta charset="utf-8">
+	<meta charset="utf-8">
 	<title>Success Airlines</title>
+	<link rel="icon" type="image/ico" href="favicon.ico"/>
 	<!-- Main page of Success Airlines -->
 	<style type="text/css">
-		body { font-family: arial, helvetica, sans-serif;
+		body {
+			font-family: arial, helvetica, sans-serif;
 			background-color: navy;
 			margin: auto;
-			width: 80%; }
+			width: 80%;
+		}
 
-		nav { font-size: 105%;
+		nav {
+			display: absolute;
+			font-size: 105%;
 			width: 15%;
 			float: left;
 			color: white;
@@ -19,63 +25,96 @@
 			border-right: 0;
 			text-align: center;
 			padding: 4%;
-			padding-right: 6%; }
+			padding-right: 6%;
+		}
 
-		main { float: left;
+		main {
+			display: absolute;
+			float: left;
 			width: 70%;
 			padding: 1%;
 			color: black;
 			border: thick solid black;
 			background-color: wheat;
-			text-align: left; }
+			text-align: left;
+			padding-bottom: 188px;
+		}
 
-		h1 { color: navy; }
+		main::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			z-index: -1;
 
-		h2 { color: navy; }
+		}
 
-		em { color: brown;
-			font-weight: bold; }
+		h1 {
+			color: navy;
+		}
 
+		h2 {
+			color: navy;
+		}
+
+		em {
+			color: brown;
+			font-weight: bold;
+		}
 	</style>
 </head>
+
 <body>
 
-<nav id="top" >
-	<a href="">About Us</a><br>
-	<a href="">Air Taxi</a><br>
-	<a href="">Cargo</a><br>
-	<a href="">Information</a><br>
-	<a href="">Reservations</a><br><br>
-	<img src="attendant.jpg" alt="image of one of Success Airlines' flight attendants" width="200" height="300"><br>
-	<img src="arrival.jpg" alt="image of young, successful woman arriving in limo" width="200" height="310">
-</nav>
+	<nav id="top">
+		<a href="">About Us</a><br>
+		<a href="">Air Taxi</a><br>
+		<a href="">Cargo</a><br>
+		<a href="">Information</a><br>
+		<a href="">Reservations</a><br><br>
+		<img src="attendant.jpg" alt="image of one of Success Airlines' flight attendants" width="200" height="300"><br>
+		<img src="terminal.gif" alt="image of our terminal" usemap="#terminal"><br>
+		<img src="arrival.jpg" alt="image of young, successful woman arriving in limo" width="200" height="310">
+	</nav>
 
-<main>
-	<p><img src="jet.gif" alt="Success Airlines logo" width="440" height="100"></p>
+	<main>
+		<p><img src="jet.gif" alt="Success Airlines logo" width="440" height="100"></p>
 
-	<h1>Are Successful?</h1>
-	<p>You know you are when you fly <em>Success Airlines</em>. We offer the finest on-demand service for the busiest and most successful executives in the country along the East Coast corridor, from Canada to Florida and the Caribbean. Pass your mouse over the map of our renovated New York terminal to see its new features.</p>
+		<h1>Are Successful?</h1>
+		<p>You know you are when you fly <em>Success Airlines</em>. We offer the finest on-demand service for the busiest and most successful executives in the country along the East Coast corridor, from Canada to Florida and the Caribbean. Pass your mouse over
+			the map of our renovated New York terminal to see its new features.</p>
 
-	<h2>Service</h2>
-	<p>We have unparalleled in-flight service. Our jets seat from 6 to 16 passengers. Our flight attendants will cater to your every need. First-class dining is all we offer. Your meals are prepared either just prior to flight or on board. We will arrange to follow any special dietary principles or restrictions you may have.</p>
+		<h2>Service</h2>
+		<p>We have unparalleled in-flight service. Our jets seat from 6 to 16 passengers. Our flight attendants will cater to your every need. First-class dining is all we offer. Your meals are prepared either just prior to flight or on board. We will arrange
+			to follow any special dietary principles or restrictions you may have.</p>
 
-	<h2>Safety</h2>
-	<p><em>Success Airlines</em> flies the newest fleet of small jet aircraft of any airline. All of our planes are TechJSX jet aircraft manufactured within the last five years. Equipment is fully state-of-the-art. Our pilots have been hand-picked from among the best of commercial and private air carriers. Each pilot has more than 15 years of full-time flying experience with the airline industry, and all our pilots are recertified at least once a year.</p>
+		<h2>Safety</h2>
+		<p><em>Success Airlines</em> flies the newest fleet of small jet aircraft of any airline. All of our planes are TechJSX jet aircraft manufactured within the last five years. Equipment is fully state-of-the-art. Our pilots have been hand-picked from among
+			the best of commercial and private air carriers. Each pilot has more than 15 years of full-time flying experience with the airline industry, and all our pilots are recertified at least once a year.</p>
 
-	<h2>Productivity</h2>
-	<p>Think it's not cost-effective to fly Success Airlines? Think about all the lost time wasted in travelling to a busy airport and dealing with lengthy security delays. As a frequent flyer with <em>Success Airlines</em>, you are security-vetted once a year. You arrive at our terminal, get on the plane, and take off. We have our own private terminals. Your baggage travels on board with you or on the flight itself. Your baggage never gets lost or misrouted. All of our seats fully recline, so you can sleep comfortably on longer flights. Whether you choose to do paperwork, read, or get some sleep, you'll be ready to go for that upcoming executive meeting. You'll be at your peak performance because you travelled with <em>Success Airlines</em>.</p>
+		<h2>Productivity</h2>
+		<p>Think it's not cost-effective to fly Success Airlines? Think about all the lost time wasted in travelling to a busy airport and dealing with lengthy security delays. As a frequent flyer with <em>Success Airlines</em>, you are security-vetted once a
+			year. You arrive at our terminal, get on the plane, and take off. We have our own private terminals. Your baggage travels on board with you or on the flight itself. Your baggage never gets lost or misrouted. All of our seats fully recline, so you can
+			sleep comfortably on longer flights. Whether you choose to do paperwork, read, or get some sleep, you'll be ready to go for that upcoming executive meeting. You'll be at your peak performance because you travelled with <em>Success Airlines</em>.</p>
 
-	<h2>Convenience</h2>
-	<p>We can arrange for limousine service to bring you to the airport and take you back to your office or residence. Ride in comfort for your entire trip, from door to door. Now that's the way to do business!</p>
+		<h2>Convenience</h2>
+		<p>We can arrange for limousine service to bring you to the airport and take you back to your office or residence. Ride in comfort for your entire trip, from door to door. Now that's the way to do business!</p>
 
-	<p>Contact us today so you can join our <a href="taxi.html#join">Air Taxi Club</a> for even better service. We'll fly you from your heliport to ours.</p>
+		<p>Contact us today so you can join our <a href="taxi.html#join">Air Taxi Club</a> for even better service. We'll fly you from your heliport to ours.</p>
 
-	<p id="links">
-		<a href="http://www.weather.com">Latest Weather</a><br><br>
-		<a href="mailto:customerservice@sucessairlines.com"><img src="email.jpg" height="38" width="40">Contact Us</a><br><br>
-		<a href="#top"><img src="uparrow.jpg" alt="image of arrow pointing upwards" width="40" height="38">Back to Top</a>
-	</p>
-</main>
+		<p id="links">
+			<a href="http://www.weather.com">Latest Weather</a><br><br>
+			<a href="mailto:customerservice@sucessairlines.com"><img src="email.jpg" height="38" width="40" alt="mail us">Contact Us</a><br><br>
+			<a href="#top"><img src="uparrow.jpg" alt="image of arrow pointing upwards" width="40" height="38">Back to Top</a>
+		</p>
+	</main>
+
+	<map name="terminal">
+		<area shape="rect" coords="16,34,92,143" href="Photos.html#cocourse" alt="The concourse link." />
+		<area shape="circle" coords="145,170,24" href="Photos.html#limo" alt="The limo link" />
+		<area shape="poly" coords="29,147,30,160,16,162,16,188,93,187,96,145" href="Photos.html#security" alt="The security link" />
+	</map>
 
 </body>
+
 </html>

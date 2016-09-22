@@ -1,0 +1,29 @@
+body {
+	background: url(pback.jpg) repeat;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid red;
+    margin: 0 auto;
+    padding: 0;
+	text-align: center;
+	width: 70%;
+}
+
+b {
+	font-family: Arial, Helvetica, sans-serif;
+	color: blue
+}
+
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: blue;
+}
+
+.centered {
+	margin: 0 auto;
+	text-align: center;
+}
