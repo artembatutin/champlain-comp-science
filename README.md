@@ -8,7 +8,7 @@ This is a personal repository created to provide organization and hopefully some
 
 ### About me
 
-My name is Artem. I am passionate about technology. I'm currently going to study to become a programmer. I know some Java so I already have a fundemental programming idea on how things are supposed to be in Object-Oriented-Programming. I live in Montreal and I have big dreams on my future career. This is a simple repository for my "start-education" appearance.
+My name is Artem. I am passionate about technology. I'm currently going to study to become a programmer. I know some Java so I already have a fundamental programming idea on how things are supposed to be in Object-Oriented-Programming. I live in Montreal and I have big dreams on my future career. This is a simple repository for my "start-education" appearance.
 
 ### What is the program?
 
