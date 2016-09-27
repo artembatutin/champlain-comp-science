@@ -27,3 +27,17 @@ h1 {
 	margin: 0 auto;
 	text-align: center;
 }
+
+nav {
+	float:left;
+	padding-right: 40px;
+}
+
+content {
+	right: 240px;
+}
+
+nav {
+	float: left;
+	display: block;
+}
