@@ -2,8 +2,6 @@ package week5;
 
 import java.util.Scanner;
 
-import static week5.PizzaSize.*;
-import static week5.PizzaToppingType.*;
 
 public class BuyPizza {
 	
