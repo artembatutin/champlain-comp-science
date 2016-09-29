@@ -1,0 +1,27 @@
+Condo:  
+	upper-left: 0,0
+	upper-right: 228,0
+	lower-left: 0, 224
+	lower-right: 228, 224
+
+Country Cottage:  
+	upper-left: 0,224
+	upper-right: 228,224
+	lower-left: 0, 449
+	lower-right: 228, 449
+
+Single-family:
+	upper-left: 228,0
+	upper-right: 449,0
+	lower-left: 228, 224
+	lower-right: 449, 224
+
+Mobile:
+	upper-left: 228,224
+	upper-right: 449,224
+	lower-left: 228, 449
+	lower-right: 449, 449
+
+	
+
+**Image composited from 4 images.  The 4 images came from - http://www.remax-quebec.com/en/showHome.rmx

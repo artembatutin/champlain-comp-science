@@ -1,0 +1,33 @@
+body {
+	background: black url(bg.jpg) repeat;
+	color: white;
+}
+
+nav {
+	text-align: center;
+}
+
+#wrapper {
+	background: 0xffffff;
+	width: 50%;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+nav a {
+	margin-left: 5%;
+	margin-right: 5%;
+	text-decoration: none;
+
+}
+
+nav a:hover {
+	background: white;
+}
+
+.section {
+	background: rgba(0, 0, 0, 0.6);
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
