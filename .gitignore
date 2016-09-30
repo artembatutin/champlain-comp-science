@@ -1,0 +1,10 @@
+*.gz
+*.DS_Store**
+*.project**
+*.classpath**
+*.class**
+*.eml**
+*.iml**
+/out/
+/champlain-comp-science.ipr
+/champlain-comp-science.iws

@@ -3,7 +3,7 @@ package week6;
 public class ShippingCharges {
 
     public static void main(String[] args) {
-        int miles = 600;
+        int miles = 550;
         int charges = miles / 500;
         double rate = 1;
         double weight = 2;
@@ -17,6 +17,9 @@ public class ShippingCharges {
             rate = 3.7;
         else if(weight >= 10)
             rate = 4.8;
+
+        if(charges == 0)
+            charges = 1;
 
         double finalPrice = rate * charges;
         System.out.println("Weight: " + weight + " miles: " + miles + " will cost you " + finalPrice);
