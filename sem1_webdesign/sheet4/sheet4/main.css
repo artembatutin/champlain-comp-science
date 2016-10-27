@@ -1,0 +1,29 @@
+body {
+	margin: auto;
+	width: 30%;
+    color: #330000;
+    font-family: verdana, arial, sans-serif;
+    background-color: #FFFFCC;
+}
+
+footer {
+    text-align: center;
+    color: black;
+    font-size: 10px;
+    background-color: #CCAA66;
+}
+
+.month h2 {
+    padding-left: 5%;
+    color: black;
+    background-color: #CCAA66;
+}
+
+.month p {
+    width: 190px;
+    padding-left: 10%;
+}
+
+.centered {
+    text-align: center;
+}
