@@ -62,8 +62,23 @@ h1 {
 }
 
 th, td {
+	font-weight: normal;
 	border: 1px solid black;
 	padding: 10px 25px 10px 25px;
+}
+
+td:first-child {
+	text-align: left;
+}
+
+td:first-child + td {
+	/* second col */
+	text-align: center;
+}
+
+td:first-child + td + td {
+	/* third col */
+	text-align: center;
 }
 
 table{
