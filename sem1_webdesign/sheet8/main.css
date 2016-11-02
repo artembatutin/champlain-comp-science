@@ -63,10 +63,6 @@ th, td {
 	padding: 10px 25px 10px 25px;
 }
 
-td:first-child {
-	text-align: left;
-}
-
 td:first-child + td {
 	/* second col */
 	text-align: center;
