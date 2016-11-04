@@ -1,78 +1,72 @@
 body {
     width: 70%;
-    color: #330000;
+    color: #000000;
     font-family: verdana, arial, sans-serif;
-    background-color: #FFFFCC;
+    background-color: #E8D882;
     border: 2px solid black;
-    margin: 30px auto;
+    margin: 3% auto;
     box-shadow: 1px 1px 1px 1px black;
     -moz-box-shadow: 1px 1px 1px 1px black;
     -webkit-box-shadow: 1px 1px 1px 1px black;
 }
 
 h1 {
-    margin-left: 30px;
-    margin-top: 30px;
+    margin-left: 2%;
+    margin-top: 2%;
     font-size: 150%;
-    color: brown;
     color: #663300;
 }
 
 footer {
-    text-align: center;
-    color: black;
     font-size: 80%;
-    background-color: #CCAA66;
-}
-
-footer p {
     margin: 0;
     padding: 8px 0;
+    text-align: center;
+    background-color: #CCAA66;
     border-top: 2px solid black;
 }
 
 nav {
-    width: 15%;
-    height: 100%;
+    width: 150px;
     float: left;
-    margin-top: 0;
-    display: block;
-    background-color: #FFFFCC;
+}
+
+ul {
+    padding-left: 30px;
 }
 
 nav ul li {
-    margin-left: 20%;
     list-style: none;
-    text-decoration: none;
+}
+
+ul li ul {
+    font-size: 80%;
 }
 
 a {
     text-decoration: none;
 }
 
-footer a {
+a {
     color: #663300;
-    text-decoration: none;
 }
 
-nav ul li, a:link {
+a:link {
     color: #996633;
-    text-decoration: none;
 }
 
-nav ul li, footer a:hover {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-nav ul li, a:visited {
+a:visited {
     color: #330000;
-    text-decoration: none;
+}
+
+a:hover {
+    color: #FFFFFF;
 }
 
 main {
-    border-left: 2px solid black;
-    overflow: hidden;
+    padding-top: 30px;
+	padding-bottom: 15px;
+    margin-left: 150px;
     background-color: #F1E8B0;
 }
 
@@ -86,12 +80,11 @@ main p {
 
 main img {
     margin: 30px;
-	float: right;
+    float: right;
 }
 
 header {
     background-color: #CCAA66;
-    width: 100%;
     border-bottom: 2px solid black;
 }
 
@@ -101,19 +94,19 @@ header img {
 }
 
 table {
-	width: 90%;
-	padding: 5px 30px 20px 30px;
+    width: 90%;
+    padding: 5px 30px 20px 30px;
 }
 
 table td {
-	padding-left: 10px;
+    padding-left: 30px;
 }
 
 main table tr:nth-child(1), main table tr:nth-child(3) {
-	background-color: #CCAA66;
+    background-color: #CCAA66;
 }
 
-.month h2 {
+h2 {
     padding-left: 5%;
     margin: 0 auto;
     width: 70%;
@@ -124,13 +117,17 @@ main table tr:nth-child(1), main table tr:nth-child(3) {
 }
 
 .month p {
-    width: 190px;
     margin-left: 20%;
+}
+
+.month audio {
+	margin-left: 20%;
+	margin-top: 15px;
 }
 
 .month img {
     margin-right: 25%;
-	float: right;
+    float: right;
 }
 
 .centered {
