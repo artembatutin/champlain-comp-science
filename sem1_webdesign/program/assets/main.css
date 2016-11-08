@@ -1,5 +1,18 @@
+@font-face {
+    font-family: manteka;
+    src: url(../fonts/manteka.ttf);
+}
+
+@font-face {
+	font-family: simplifica;
+	src: url(../fonts/simplifica.ttf);
+}
+
 body {
 	background: #000000 url('bg.jpg') repeat;
+	color: white;
+	font-family: simplifica;
+	font-size: 24px;
 	margin: 0;
 }
 
