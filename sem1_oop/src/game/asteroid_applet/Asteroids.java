@@ -19,9 +19,6 @@ public class Asteroids extends Applet implements Runnable, KeyListener {
 	//the main drawing object for the back buffer
 	Graphics2D g2d;
 	
-	//toggle for drawing bounding boxes
-	boolean showBounds = false;
-	
 	//create the game.asteroid array
 	int ASTEROIDS = 20;
 	Asteroid[] ast = new Asteroid[ASTEROIDS];

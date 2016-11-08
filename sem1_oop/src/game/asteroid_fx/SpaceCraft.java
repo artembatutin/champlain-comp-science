@@ -20,6 +20,7 @@ import java.util.Set;
 
 /**
  * The main game of asteroids.
+ * @author Artem Batutin <artembatutin@gmail.com>
  */
 public class SpaceCraft extends Application {
 	
@@ -33,7 +34,6 @@ public class SpaceCraft extends Application {
 	
 	@Override
 	public void start(Stage stage) {
-		
 		Scene scene = new Scene(root, 1000, 600, Color.BLACK);
 		
 		stage.setTitle("SpaceCraft by Artem Batutin");
@@ -41,19 +41,22 @@ public class SpaceCraft extends Application {
 		stage.setScene(scene);
 		
 		add(new Ship());
-		
 		Random gen = new Random();
-		
-		for(int i = 0; i < 20; i++) {
+		for(int i = 0; i < 20; i++)
 			add(new Rock(gen.nextInt(1000), gen.nextInt(600)));
-		}
 		
+		//Displaying the stage.
 		stage.show();
 		
 		//Pulsing all space nodes each 100 milliseconds.
-		Timeline pulse = new Timeline(new KeyFrame(Duration.millis(100), event -> nodes.forEach(SpaceNode::pulse)));
+		Timeline pulse = new Timeline(new KeyFrame(Duration.millis(500), event -> nodes.forEach(SpaceNode::pulse)));
 		pulse.setCycleCount(Animation.INDEFINITE);
 		pulse.play();
+		
+		//Drawing loop of all space nodes, each 20 milliseconds(for 50 frames per seconds).
+		Timeline draw = new Timeline(new KeyFrame(Duration.millis(20), event -> nodes.forEach(SpaceNode::draw)));
+		draw.setCycleCount(Animation.INDEFINITE);
+		draw.play();
 	}
 	
 	/**

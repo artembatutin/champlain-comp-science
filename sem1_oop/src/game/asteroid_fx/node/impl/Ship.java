@@ -21,4 +21,10 @@ public class Ship extends SpaceNode {
 	public void pulse() {
 		setLayoutX(getLayoutX() + 1);
 	}
+	
+	@Override
+	public void draw() {
+		
+	}
+	
 }

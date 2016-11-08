@@ -1,0 +1,55 @@
+SEMESTER BREAKDOWN
+SEMESTER 1:
+English
+Humanities
+French
+Physical Education
+Computing Mathematics
+Computer Fundamentals
+Introduction to OOP (Object Oriented Programming)
+Web Interface Design
+
+SEMESTER 2:
+English
+French
+Humanities
+Complementary
+Quantitative Methods for Computer Science Students
+Programming with Java
+Web Site Planning and Implementation
+Operating Systems and Scripting
+Configuring, Managing and Maintaining Computers
+
+SEMESTER 3:
+English
+Physical Education
+Complementary
+Business Fundamentals for IT
+Networking and Internet Services
+COBOL Programming
+Database Design and SQL Language
+Game Development
+
+SEMESTER 4:
+English
+Humanities
+Physical Education
+Social Media Business Tool
+Business Systems Analysis
+JCL/RPG
+Legacy System Modernization
+Web Programming
+
+SEMESTER 5:
+Database Systems Administration
+Software Testing and Quality Assurance
+Building Windows and Web Applications
+Final Project 1 – Legacy to Mobile
+Mobile Application Development
+Career Planning
+
+SEMESTER 6:
+Emerging Technologies
+Externship – Legacy to Mobile
+Final Project 2 – Legacy to Mobile
+Comprehensive Assessment /Digital Portfolio
