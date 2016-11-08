@@ -27,8 +27,8 @@ footer {
 }
 
 nav {
+	float: left;
     width: 150px;
-    float: left;
 }
 
 ul {
