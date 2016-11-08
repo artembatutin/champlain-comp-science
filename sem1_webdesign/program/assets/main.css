@@ -1,3 +1,17 @@
 body {
-	margin: auto;
+	background: #000000 url('bg.jpg') repeat;
+	margin: 0;
+}
+
+#wrapper {
+	width: 70%;
+	margin: 0 auto;
+	min-height: 1000px;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+nav {
+	display: block;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.2);
 }
