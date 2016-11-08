@@ -3,11 +3,12 @@ body {
 	margin: 0;
 }
 
-#wrapper {
+main {
 	width: 70%;
 	margin: 0 auto;
-	min-height: 1000px;
+
 	background-color: rgba(0, 0, 0, 0.8);
+	display:block;
 }
 
 nav {
@@ -15,3 +16,16 @@ nav {
 	width: 100%;
 	background: rgba(0, 0, 0, 0.2);
 }
+
+ul {list-style-type: katakana;
+		color:rgb(221, 228, 225);
+	font-size:120%;
+overflow:hidden;}
+
+h1 {font-family: "Comic Sans Ms",Arial, sans-serif;
+		color:rgb(0, 247, 252);
+		text-align:center;}
+
+.ulright {float:right;}
+
+.content {border-bottom: #589fe2 10px solid;}
