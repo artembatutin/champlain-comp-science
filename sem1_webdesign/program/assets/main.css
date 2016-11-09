@@ -157,6 +157,5 @@ footer section {
 }
 
 h2{		text-align:center;
-		text-shadow:6px 1px 6px rgba(255,0,0,0.8);
 		border-radius:100px;
-		background:linear-gradient(cyan,grey);}
+		background:linear-gradient(lightblue,black);}
