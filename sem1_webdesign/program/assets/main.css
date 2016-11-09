@@ -42,5 +42,8 @@ h1 {font-family: "Comic Sans Ms",Arial, sans-serif;
 .ulright {float:right;}
 
 .content {border-bottom: #589fe2 10px solid;}
+.content h1,h2,p{
+	margin-left:10px;
+}
 
 .center{text-align:center;}
