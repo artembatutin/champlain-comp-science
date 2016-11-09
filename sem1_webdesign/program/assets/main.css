@@ -27,22 +27,24 @@ h1 {font-family: "Comic Sans Ms",Arial, sans-serif;
 		color:rgb(0, 247, 252);
 		text-align:center;}
 h3 {font-weight:bold;
-	font-size:150%;
+	font-size:300%;
 		color:rgb(221,228,225);
 	text-align:center;
-margin-top:2%;
-margin-bottom:2%;}
+margin-top:3%;
+margin-bottom:3%;}
 
 .imageh1 {display:block;
 					margin: 0 auto;
 					margin-bottom:1%;}
 
-.pcenter {text-align:center;
-					margin-bottom:1%;
-					color:rgb(221, 228, 225);
-						font-size:110%;
+.pcenter {margin-right:50%;
+	margin-left:auto;
+					margin-bottom:1%	;
+							color:rgb(221, 228, 225);
+						font-size:130%;
 }
 
+.floatleft {float:left;}
 
 
 
