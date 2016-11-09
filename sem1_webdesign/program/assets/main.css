@@ -17,15 +17,34 @@ nav {
 	background: rgba(0, 0, 0, 0.2);
 }
 
-ul {list-style-type: katakana;
+ul {list-style-type: none	;
 		color:rgb(221, 228, 225);
-	font-size:120%;
-overflow:hidden;}
+	font-size:100%;
+
+}
 
 h1 {font-family: "Comic Sans Ms",Arial, sans-serif;
 		color:rgb(0, 247, 252);
 		text-align:center;}
+h3 {font-weight:bold;
+	font-size:150%;
+		color:rgb(221,228,225);
+	text-align:center;
+margin-top:2%;
+margin-bottom:2%;}
 
-.ulright {float:right;}
+.imageh1 {display:block;
+					margin: 0 auto;
+					margin-bottom:1%;}
 
-.content {border-bottom: #589fe2 10px solid;}
+.pcenter {text-align:center;
+					margin-bottom:1%;
+					color:rgb(221, 228, 225);
+						font-size:110%;
+}
+
+
+
+
+
+.content {border-top: #589fe2 10px solid;}
