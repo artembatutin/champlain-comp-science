@@ -155,3 +155,8 @@ footer section {
     display: inline-block;
     min-height: 100px;
 }
+
+h2{		text-align:center;
+		text-shadow:6px 1px 6px rgba(255,0,0,0.8);
+		border-radius:100px;
+		background:linear-gradient(cyan,grey);}
