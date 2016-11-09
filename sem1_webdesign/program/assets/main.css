@@ -127,6 +127,7 @@ h1 {
 
 .content h1, h2, p {
     margin-left: 10px;
+	margin-right:10px;
 }
 
 .ulright {
