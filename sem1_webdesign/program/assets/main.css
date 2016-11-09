@@ -136,7 +136,8 @@ h1 {
 .content {
     border-bottom: #589fe2 10px solid;
 }
-
+.center{text-align:center;
+		color:red;}
 footer {
     display: block;
     width: 70%;
