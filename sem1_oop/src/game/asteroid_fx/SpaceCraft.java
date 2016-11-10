@@ -40,7 +40,10 @@ public class SpaceCraft extends Application {
 		stage.setResizable(false);
 		stage.setScene(scene);
 		
-		add(new Ship());
+		Ship ship = new Ship();
+		add(ship);
+		scene.setOnKeyPressed(new InputManager(ship));
+		
 		Random gen = new Random();
 		for(int i = 0; i < 20; i++)
 			add(new Rock(gen.nextInt(1000), gen.nextInt(600)));
@@ -48,13 +51,13 @@ public class SpaceCraft extends Application {
 		//Displaying the stage.
 		stage.show();
 		
-		//Pulsing all space nodes each 100 milliseconds.
-		Timeline pulse = new Timeline(new KeyFrame(Duration.millis(500), event -> nodes.forEach(SpaceNode::pulse)));
-		pulse.setCycleCount(Animation.INDEFINITE);
-		pulse.play();
-		
 		//Drawing loop of all space nodes, each 20 milliseconds(for 50 frames per seconds).
 		Timeline draw = new Timeline(new KeyFrame(Duration.millis(20), event -> nodes.forEach(SpaceNode::draw)));
+		draw.setCycleCount(Animation.INDEFINITE);
+		draw.play();
+		
+		//Drawing loop of all space nodes, each 150 milliseconds.
+		Timeline pulse = new Timeline(new KeyFrame(Duration.millis(150), event -> nodes.forEach(SpaceNode::pulse)));
 		draw.setCycleCount(Animation.INDEFINITE);
 		draw.play();
 	}

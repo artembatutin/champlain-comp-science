@@ -349,12 +349,12 @@ public class Asteroids extends Applet implements Runnable, KeyListener {
 	
 	//calculate x movement value based on direction angle
 	public double calcAngleMoveX(double angle) {
-		return (double) (Math.cos(angle * Math.PI / 180));
+		return Math.cos(angle * Math.PI / 180);
 	}
 	
 	//calculate y movement value based on direction angle
 	public double calcAngleMoveY(double angle) {
-		return (double) (Math.sin(angle * Math.PI / 180));
+		return Math.sin(angle * Math.PI / 180);
 	}
 	
 }

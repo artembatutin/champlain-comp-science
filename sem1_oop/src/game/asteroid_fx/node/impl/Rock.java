@@ -5,7 +5,7 @@ import javafx.scene.paint.Color;
 
 public class Rock extends SpaceNode {
 	
-	private int rotate = 0;
+	private double rotate = 0;
 	
 	/**
 	 * The default rock polygon points.
@@ -17,14 +17,13 @@ public class Rock extends SpaceNode {
 	}
 	
 	@Override
-	public void pulse() {
-		rotate += 2;
-		System.out.println(rotate);
+	public void draw() {
+		rotate += .5;
 		rotateProperty().set(rotate);
 	}
 	
 	@Override
-	public void draw() {
+	public void pulse() {
 		
 	}
 }

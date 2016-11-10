@@ -1,6 +1,4 @@
-package exercises.week9;/**
- * Created by artem on 10/21/16.
- */
+package exercises.week9;
 
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -26,7 +24,7 @@ public class ColorRoullette extends Application {
 		Random gen = new Random();
 		Group root = new Group();
 		
-		Rectangle rect = new Rectangle(300, 275);
+		Rectangle rect = new Rectangle(300, 275, Color.RED);
 		Label rgb = new Label("RGB:");
 		rgb.setLayoutX(50);
 		rgb.setLayoutY(150);
@@ -49,6 +47,7 @@ public class ColorRoullette extends Application {
 		Scene scene = new Scene(root, 300, 300, Color.BLACK);
 		stage.setResizable(false);
 		stage.setScene(scene);
+		stage.setTitle("Colors");
 		stage.show();
 	}
 }

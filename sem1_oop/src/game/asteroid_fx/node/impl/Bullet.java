@@ -15,12 +15,12 @@ public class Bullet extends SpaceNode {
 	}
 	
 	@Override
-	public void pulse() {
+	public void draw() {
 		
 	}
 	
 	@Override
-	public void draw() {
+	public void pulse() {
 		
 	}
 }

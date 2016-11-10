@@ -17,14 +17,19 @@ public abstract class SpaceNode extends Polygon {
 	private NodeState state = CREATED;
 	
 	/**
-	 * The horizontal velocity of our ship.
+	 * The horizontal velocity of our {@link SpaceNode}.
 	 */
 	private int velocityX;
 	
 	/**
-	 * The vertical velocity of our ship.
+	 * The vertical velocity of our {@link SpaceNode}.
 	 */
 	private int velocityY;
+	
+	/**
+	 * The moving angle of our {@link SpaceNode}.
+	 */
+	private int moveAngle;
 	
 	/**
 	 * Our main construction of {@link SpaceNode}.
@@ -48,14 +53,14 @@ public abstract class SpaceNode extends Polygon {
 	}
 	
 	/**
-	 * The updating pulse behavior of this {@link SpaceNode}.
-	 */
-	public abstract void pulse();
-	
-	/**
 	 * The drawing method for this {@link SpaceNode}.
 	 */
 	public abstract void draw();
+	
+	/**
+	 * The logic method for this {@link SpaceNode}.
+	 */
+	public abstract void pulse();
 	
 	/**
 	 * Gets the {@link NodeState}.
@@ -132,6 +137,18 @@ public abstract class SpaceNode extends Polygon {
 	
 	public void setVelocityY(int velocityY) {
 		this.velocityY = velocityY;
+	}
+	
+	public void incrementMoveAngle(int amount) {
+		this.moveAngle += amount;
+	}
+	
+	public void decrementMoveAngle(int amount) {
+		this.moveAngle -= amount;
+	}
+	
+	public void setMoveAngle(int velocityY) {
+		this.moveAngle = velocityY;
 	}
 	
 }
