@@ -1,7 +1,4 @@
-@font-face {
-    font-family: Manteka;
-    src: url(../fonts/manteka.ttf);
-}
+@import url('https://fonts.googleapis.com/css?family=Signika');
 
 @font-face {
     font-family: Simplifica;
@@ -28,10 +25,14 @@ a:active {
     text-decoration: none;
 }
 
+span {
+	font-size: 400%;
+}
+
 body {
     background: #000000 url('bg.jpg') repeat;
     color: white;
-    font-family: "Comic Sans Ms", Arial, sans-serif;
+    font-family: 'Signika', Arial, sans-serif;
     margin: 0;
 }
 
@@ -41,7 +42,12 @@ main {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     display: block;
-    height:100%;
+    height: 100%;
+		box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.9), 0 12px 30px 0 rgba(0, 0, 0, 0.7)
+}
+
+img {
+	border: black 2px solid;
 }
 
 nav {
@@ -51,33 +57,22 @@ nav {
     color: white;
 }
 
-h3 {font-weight:bold;
-	font-size:300%;
-		color:rgb(221,228,225);
-	text-align:center;
-margin-top:3%;
-margin-bottom:3%;}
-
-.imageh1 {display:block;
-					margin: 0 auto;
-					margin-bottom:1%;}
-
-.pcenter {text-align:center;
-					margin-bottom:1%	;
-							color:rgb(221, 228, 225);
-						font-size:130%;
-
+h3 {
+    font-weight: bold;
+    font-size: 300%;
+    color: rgb(221, 228, 225);
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 
+.pcenter {
+    text-align: center;
+    margin-bottom: 1%;
+    color: rgb(221, 228, 225);
+    font-size: 130%;
+}
 
-
-
-.javaleft {display:block; margin:0 auto;
-					margin-top:2%;}
-
-
-.artcontent {border-top: #7C488F 10px solid;
-										}
 nav img {
     float: left;
 }
@@ -147,6 +142,15 @@ h1 {
     font-family: "Comic Sans Ms", Arial, sans-serif;
     color: rgb(0, 247, 252);
     text-align: center;
+		background: rgba(250, 195, 125, 1);
+    color: rgba(0, 0, 0, .8);
+}
+
+h2 {
+    text-align: center;
+    border-radius: 100px;
+		background: #e88161;
+    color: rgba(0, 0, 0, .8);
 }
 
 .content {
@@ -155,52 +159,56 @@ h1 {
 
 .content h1, h2, p {
     margin-left: 10px;
-	margin-right:10px;
+    margin-right: 10px;
 }
 
-.center{text-align:center;
-		color:red;}
+.center {
+    text-align: center;
+    color: red;
+}
+
+article {
+	display: block;
+	font-size: 110%;
+	border-top: #e88161 10px solid;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+article section {
+	display: inline-block;
+	vertical-align: top;
+	width: 40%;
+	margin-left: 5%;
+}
+
+article img {
+	width: 150px;
+	height: 125px;
+	margin: 2%;
+}
+
 footer {
     display: block;
     width: 70%;
     margin: 0 auto;
-    border-top: black solid 10px;
+    border-top: rgba(255, 255, 255, 0.5) solid 10px;
 }
 
 footer a {
     color: white;
 }
 
+footer p {
+	padding: 10px;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
 footer section {
-    width: 32%;
-    display: inline-block;
-    min-height: 100px;
+    width: 25%;
+		margin-left: 5%;
+		margin-top: 0;
+		padding-top: 0;
+		display: inline-block;
+		vertical-align:top;
 }
-
-h2{		text-align:center;
-		border-radius:100px;
-<<<<<<< HEAD
-		background:linear-gradient(lightblue,black);}
-
-.car {background: rgba(250,195,125,1);
-      color:rgba(0,0,0,.8);}
-
-.carcontent{display:block;
-            font-size:110%;
-            border-top: #e88161 10px solid;
-
-            }
-
-.carcontent img {float:right;
-                  width:150px;
-                height:125px;
-                margin:2%;
-
-                							}
-=======
-		background-color:#1d8965;}
-.applyh2{
-	margin-left:150px;
-	margin-right:150px;
-}
->>>>>>> origin/master
