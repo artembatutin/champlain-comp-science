@@ -138,9 +138,7 @@ ul {
     overflow: hidden;
 }
 
-h1 {
-    font-family: "Comic Sans Ms", Arial, sans-serif;
-    color: rgb(0, 247, 252);
+h1 {color: rgb(0, 247, 252);
     text-align: center;
 		background: rgba(250, 195, 125, 1);
     color: rgba(0, 0, 0, .8);
