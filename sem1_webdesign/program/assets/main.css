@@ -41,6 +41,7 @@ main {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     display: block;
+    height:100%;
 }
 
 nav {
@@ -75,9 +76,8 @@ margin-bottom:3%;}
 					margin-top:2%;}
 
 
-.artcontent {border-top: #589fe2 10px solid;
-						width:100%;
-							}
+.artcontent {border-top: #7C488F 10px solid;
+										}
 nav img {
     float: left;
 }
@@ -158,13 +158,6 @@ h1 {
 	margin-right:10px;
 }
 
-.ulright {
-    float: right;
-}
-
-.content {
-    border-bottom: #589fe2 10px solid;
-}
 .center{text-align:center;
 		color:red;}
 footer {
@@ -187,3 +180,19 @@ footer section {
 h2{		text-align:center;
 		border-radius:100px;
 		background:linear-gradient(lightblue,black);}
+
+.car {background: rgba(250,195,125,1);
+      color:rgba(0,0,0,.8);}
+
+.carcontent{display:block;
+            font-size:110%;
+            border-top: #e88161 10px solid;
+
+            }
+
+.carcontent img {float:right;
+                  width:150px;
+                height:125px;
+                margin:2%;
+
+                							}
