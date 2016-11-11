@@ -5,6 +5,4 @@ package game.vertra;
  */
 public class Space {
 	
-	
-	
 }

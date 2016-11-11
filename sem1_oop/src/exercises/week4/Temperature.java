@@ -13,10 +13,10 @@ public class Temperature {
 	}
 	
 	public double getCelsius() {
-		return (5/9.0) * (ftemp - 32);
+		return (5 / 9.0) * (ftemp - 32);
 	}
 	
 	public double getKelvin() {
-		return ((5/9.0) * (ftemp - 32)) + 273;
+		return ((5 / 9.0) * (ftemp - 32)) + 273;
 	}
 }

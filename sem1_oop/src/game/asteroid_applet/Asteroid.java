@@ -1,7 +1,6 @@
 package game.asteroid_applet;
 
-import java.awt.Polygon;
-import java.awt.Rectangle;
+import java.awt.*;
 
 //Asteroid class - for polygonal game.asteroid shapes
 public class Asteroid extends BaseVectorShape {

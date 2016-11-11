@@ -8,7 +8,6 @@ public class ParagramLooped {
 	
 	/**
 	 * The 5th problem of the second chapter using the loop approach.
-	 * @param args
 	 */
 	public static void main(String[] args) {
 		int blanks = 3;

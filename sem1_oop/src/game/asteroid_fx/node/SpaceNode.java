@@ -46,9 +46,9 @@ public abstract class SpaceNode extends ImageView {
 	
 	/**
 	 * Our main construction of {@link SpaceNode}.
-	 * @param image  the image of our node.
-	 * @param x      the x layout coordinate.
-	 * @param y      the y layout coordinate.
+	 * @param image the image of our node.
+	 * @param x     the x layout coordinate.
+	 * @param y     the y layout coordinate.
 	 */
 	public SpaceNode(NodeType type, Image image, double x, double y) {
 		super(image);

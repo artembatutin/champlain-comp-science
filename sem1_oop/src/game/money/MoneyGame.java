@@ -1,8 +1,5 @@
 package game.money;
 
-import java.util.ArrayList;
-import java.util.Random;
-
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
@@ -15,6 +12,9 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 class Sprite {
 	
@@ -185,6 +185,7 @@ public class MoneyGame extends Application {
 		
 		new AnimationTimer() {
 			long prevTime = System.nanoTime();
+			
 			@Override
 			public void handle(long currentTime) {
 				double diff = (currentTime - prevTime) / 1000000000.0;

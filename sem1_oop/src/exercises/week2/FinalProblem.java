@@ -13,7 +13,6 @@ public class FinalProblem {
 	
 	/**
 	 * The 18th problem of the second chapter.
-	 * @param args
 	 */
 	public static void main(String[] args) {
 		

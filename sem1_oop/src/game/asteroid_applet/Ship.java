@@ -1,7 +1,6 @@
 package game.asteroid_applet;
 
-import java.awt.Polygon;
-import java.awt.Rectangle;
+import java.awt.*;
 
 //Ship class - polygonal shape of the player's ship
 public class Ship extends BaseVectorShape {

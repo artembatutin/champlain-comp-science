@@ -2,7 +2,6 @@ package exercises.week5;
 
 import java.util.Scanner;
 
-
 public class BuyPizza {
 	
 	private static final String TOPPINGS;

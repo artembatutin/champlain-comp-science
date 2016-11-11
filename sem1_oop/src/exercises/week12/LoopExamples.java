@@ -34,7 +34,6 @@ public class LoopExamples {
 				System.out.print("#\n");
 			}
 			
-			
 		}
 	}
 }

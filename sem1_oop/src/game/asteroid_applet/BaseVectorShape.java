@@ -1,6 +1,6 @@
 package game.asteroid_applet;
 
-import java.awt.Shape;
+import java.awt.*;
 
 //Base vector shape class for polygonal shapes
 public class BaseVectorShape {

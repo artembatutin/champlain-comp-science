@@ -1,11 +1,12 @@
 package game.asteroid_applet;
 
-import java.applet.*;
+import java.applet.Applet;
 import java.awt.*;
-import java.awt.event.*;
-import java.awt.geom.*;
-import java.awt.image.*;
-import java.util.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.geom.AffineTransform;
+import java.awt.image.BufferedImage;
+import java.util.Random;
 
 //Primary class for the game
 public class Asteroids extends Applet implements Runnable, KeyListener {

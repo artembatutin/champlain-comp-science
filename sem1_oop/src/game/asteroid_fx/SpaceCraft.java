@@ -49,7 +49,7 @@ public class SpaceCraft extends Application {
 		stage.setScene(scene);
 		
 		Ship ship = new Ship(true);
-		Ship ship2 = new Ship( false);
+		Ship ship2 = new Ship(false);
 		InputManager input = new InputManager(ship, ship2);
 		scene.setOnKeyPressed(input);
 		scene.setOnKeyReleased(input);
@@ -69,16 +69,15 @@ public class SpaceCraft extends Application {
 		Timeline pulse = new Timeline(new KeyFrame(Duration.millis(150), event -> {
 			handleNodes();
 			NODES.forEach(n -> {
-						n.pulse();
-						if(n.isColliding()) {
-							for(SpaceNode other : NODES) {
-								if(n != other && n.colliding(other)) {
-									n.collide(other);
-								}
-							}
+				n.pulse();
+				if(n.isColliding()) {
+					for(SpaceNode other : NODES) {
+						if(n != other && n.colliding(other)) {
+							n.collide(other);
 						}
 					}
-			);
+				}
+			});
 		}));
 		pulse.setCycleCount(Animation.INDEFINITE);
 		pulse.play();

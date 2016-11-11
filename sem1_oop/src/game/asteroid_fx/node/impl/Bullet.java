@@ -4,7 +4,6 @@ import game.asteroid_fx.SpaceCraft;
 import game.asteroid_fx.node.NodeType;
 import game.asteroid_fx.node.SpaceNode;
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
 
 public class Bullet extends SpaceNode {
 	

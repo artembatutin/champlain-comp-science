@@ -1,6 +1,6 @@
 package game.asteroid_applet;
 
-import java.awt.Rectangle;
+import java.awt.*;
 
 //Bullet class - polygonal shape of bullet
 public class Bullet extends BaseVectorShape {

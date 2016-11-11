@@ -115,29 +115,29 @@ public class Ship extends SpaceNode {
 	
 	public void handleKeys() {
 		for(KeyCode key : pressed) {
-				if((primary && key == KeyCode.A) || (!primary && key == KeyCode.LEFT)) {
-					rotateLeft(4);
-				} else if((primary && key == KeyCode.D) || (!primary && key == KeyCode.RIGHT)) {
-					rotateRight(4);
-				}
-				
-				if((primary && key == KeyCode.W) || (!primary && key == KeyCode.UP)) {
-					setMoveAngle(getRotate());
-					double angle = getMoveAngle() - 90;
-					if(angle < 0)
-						angle = 360 + angle;
-					double y = getMoveSpeed() * Math.sin(Math.toRadians(angle));
-					double x = getMoveSpeed() * Math.cos(Math.toRadians(angle));
-					setVelocityX(getVelocityX() + x);
-					setVelocityY(getVelocityY() + y);
-					increaseMoveSpeed(0.005);
-				}
-				
-				if((primary && key == KeyCode.F) || (!primary && key == KeyCode.M)) {
-					double x = getLayoutX() + getImage().getWidth() / 2;
-					double y = getLayoutY() + getImage().getHeight() / 2;
-					SpaceCraft.add(new Bullet(this, x, y, getRotate()));
-				}
+			if((primary && key == KeyCode.A) || (!primary && key == KeyCode.LEFT)) {
+				rotateLeft(4);
+			} else if((primary && key == KeyCode.D) || (!primary && key == KeyCode.RIGHT)) {
+				rotateRight(4);
+			}
+			
+			if((primary && key == KeyCode.W) || (!primary && key == KeyCode.UP)) {
+				setMoveAngle(getRotate());
+				double angle = getMoveAngle() - 90;
+				if(angle < 0)
+					angle = 360 + angle;
+				double y = getMoveSpeed() * Math.sin(Math.toRadians(angle));
+				double x = getMoveSpeed() * Math.cos(Math.toRadians(angle));
+				setVelocityX(getVelocityX() + x);
+				setVelocityY(getVelocityY() + y);
+				increaseMoveSpeed(0.005);
+			}
+			
+			if((primary && key == KeyCode.F) || (!primary && key == KeyCode.M)) {
+				double x = getLayoutX() + getImage().getWidth() / 2;
+				double y = getLayoutY() + getImage().getHeight() / 2;
+				SpaceCraft.add(new Bullet(this, x, y, getRotate()));
+			}
 		}
 	}
 	

@@ -25,6 +25,4 @@ public class GameLoop extends AnimationTimer {
 		
 	}
 	
-	
-	
 }
