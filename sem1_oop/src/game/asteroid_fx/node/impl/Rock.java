@@ -26,4 +26,9 @@ public class Rock extends SpaceNode {
 	public void pulse() {
 		
 	}
+	
+	@Override
+	public void collide(SpaceNode other) {
+		
+	}
 }

@@ -17,19 +17,29 @@ public abstract class SpaceNode extends Polygon {
 	private NodeState state = CREATED;
 	
 	/**
-	 * The horizontal velocity of our {@link SpaceNode}.
+	 * The horizontal velocity of this {@link SpaceNode}.
 	 */
-	private int velocityX;
+	private double velocityX;
 	
 	/**
-	 * The vertical velocity of our {@link SpaceNode}.
+	 * The vertical velocity of this {@link SpaceNode}.
 	 */
-	private int velocityY;
+	private double velocityY;
 	
 	/**
-	 * The moving angle of our {@link SpaceNode}.
+	 * The moving speed of this {@link SpaceNode}.
 	 */
-	private int moveAngle;
+	private double moveSpeed;
+	
+	/**
+	 * The moving angle of this {@link SpaceNode}.
+	 */
+	private double moveAngle;
+	
+	/**
+	 * The flag which determines if this {@link SpaceNode} collides with others.
+	 */
+	private boolean colliding;
 	
 	/**
 	 * Our main construction of {@link SpaceNode}.
@@ -61,6 +71,12 @@ public abstract class SpaceNode extends Polygon {
 	 * The logic method for this {@link SpaceNode}.
 	 */
 	public abstract void pulse();
+	
+	/**
+	 * The collision method when two nodes collide.
+	 * @param other the other node which is colliding.
+	 */
+	public abstract void collide(SpaceNode other);
 	
 	/**
 	 * Gets the {@link NodeState}.
@@ -107,48 +123,56 @@ public abstract class SpaceNode extends Polygon {
 	public void onRemove() {
 	}
 	
-	public int getVelocityX() {
+	public double getVelocityX() {
 		return velocityX;
 	}
 	
-	public void incrementVelocityX(int amount) {
-		this.velocityX += amount;
-	}
-	
-	public void decrementVelocityX(int amount) {
-		this.velocityX -= amount;
-	}
-	
-	public void setVelocityX(int velocityX) {
+	public void setVelocityX(double velocityX) {
 		this.velocityX = velocityX;
 	}
 	
-	public int getVelocityY() {
+	public double getVelocityY() {
 		return velocityY;
 	}
 	
-	public void incrementVelocityY(int amount) {
-		this.velocityY += amount;
-	}
-	
-	public void decrementVelocityY(int amount) {
-		this.velocityY -= amount;
-	}
-	
-	public void setVelocityY(int velocityY) {
+	public void setVelocityY(double velocityY) {
 		this.velocityY = velocityY;
 	}
 	
-	public void incrementMoveAngle(int amount) {
-		this.moveAngle += amount;
+	public double getMoveSpeed() {
+		return moveSpeed;
 	}
 	
-	public void decrementMoveAngle(int amount) {
-		this.moveAngle -= amount;
+	public void setMoveSpeed(double speed) {
+		moveSpeed = speed;
 	}
 	
-	public void setMoveAngle(int velocityY) {
-		this.moveAngle = velocityY;
+	public void increaseMoveSpeed(double speed) {
+		this.moveSpeed += speed;
+		if(this.moveSpeed >= 1)
+			this.moveSpeed = 1;
+	}
+	
+	public void decreaseMoveSpeed(double speed) {
+		this.moveSpeed -= speed;
+		if(this.moveSpeed < 0)
+			this.moveSpeed = 0;
+	}
+	
+	public double getMoveAngle() {
+		return this.moveAngle;
+	}
+	
+	public void setMoveAngle(double angle) {
+		moveAngle = angle;
+	}
+	
+	public boolean isColliding() {
+		return colliding;
+	}
+	
+	public void setColliding(boolean colliding) {
+		this.colliding = colliding;
 	}
 	
 }

@@ -7,25 +7,24 @@ import javafx.scene.input.KeyEvent;
 
 public class InputManager implements EventHandler<KeyEvent> {
 	
-	private final Ship ship;
+	private final Ship first;
 	
-	public InputManager(Ship ship) {
-		this.ship = ship;
+	private final Ship second;
+	
+	public InputManager(Ship first, Ship second) {
+		this.first = first;
+		this.second = second;
 	}
 	
 	@Override
 	public void handle(KeyEvent event) {
-		KeyCode press = event.getCode();
-		System.out.println(press);
-		if(press == KeyCode.A) {
-			ship.rotateLeft(4);
-		} else if(press == KeyCode.D) {
-			ship.rotateRight(4);
-		}
-		if(press == KeyCode.W) {
-			ship.increaseSpeed(2);
-		} else if(press == KeyCode.S) {
-			ship.decreaseSpeed(2);
+		KeyCode code = event.getCode();
+		if(event.getEventType() == KeyEvent.KEY_PRESSED) {
+			first.keyPress(code);
+			second.keyPress(code);
+		} else if(event.getEventType() == KeyEvent.KEY_RELEASED) {
+			first.keyRelease(code);
+			second.keyRelease(code);
 		}
 	}
 }
