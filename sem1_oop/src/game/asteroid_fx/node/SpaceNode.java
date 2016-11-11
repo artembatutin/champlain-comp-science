@@ -1,20 +1,23 @@
 package game.asteroid_fx.node;
 
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Polygon;
-
-import static game.asteroid_fx.node.NodeState.CREATED;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * A space node attributed in our game.
  * @author Artem Batutin <artembatutin@gmail.com>
  */
-public abstract class SpaceNode extends Polygon {
+public abstract class SpaceNode extends ImageView {
 	
 	/**
-	 * The state of this {@link SpaceNode}, {@link NodeState#CREATED} by default.
+	 * The type of our node.
 	 */
-	private NodeState state = CREATED;
+	private final NodeType type;
+	
+	/**
+	 * The state of this {@link SpaceNode}.
+	 */
+	private NodeState state;
 	
 	/**
 	 * The horizontal velocity of this {@link SpaceNode}.
@@ -43,23 +46,16 @@ public abstract class SpaceNode extends Polygon {
 	
 	/**
 	 * Our main construction of {@link SpaceNode}.
+	 * @param image  the image of our node.
 	 * @param x      the x layout coordinate.
 	 * @param y      the y layout coordinate.
-	 * @param fill   the background fill color.
-	 * @param points the points of this polygon.
 	 */
-	public SpaceNode(int x, int y, Paint fill, double... points) {
+	public SpaceNode(NodeType type, Image image, double x, double y) {
+		super(image);
+		this.type = type;
 		//Setting the location.
 		setLayoutX(x);
 		setLayoutY(y);
-		
-		//Setting the color.
-		if(fill != null)
-			setFill(fill);
-		
-		//Adding points.
-		for(double p : points)
-			getPoints().add(p);
 	}
 	
 	/**
@@ -77,6 +73,14 @@ public abstract class SpaceNode extends Polygon {
 	 * @param other the other node which is colliding.
 	 */
 	public abstract void collide(SpaceNode other);
+	
+	/**
+	 * Gets the {@link NodeState}.
+	 * @return the type of this {@link SpaceNode}
+	 */
+	public NodeType getType() {
+		return type;
+	}
 	
 	/**
 	 * Gets the {@link NodeState}.
@@ -99,9 +103,6 @@ public abstract class SpaceNode extends Polygon {
 			case DEAD:
 				onDie();
 				break;
-			case REMOVED:
-				onRemove();
-				break;
 		}
 	}
 	
@@ -115,12 +116,6 @@ public abstract class SpaceNode extends Polygon {
 	 * The method executed when this {@link SpaceNode} dies.
 	 */
 	public void onDie() {
-	}
-	
-	/**
-	 * The method executed when this {@link SpaceNode} is removed from the world.
-	 */
-	public void onRemove() {
 	}
 	
 	public double getVelocityX() {
@@ -155,8 +150,8 @@ public abstract class SpaceNode extends Polygon {
 	
 	public void decreaseMoveSpeed(double speed) {
 		this.moveSpeed -= speed;
-		if(this.moveSpeed < 0)
-			this.moveSpeed = 0;
+		if(this.moveSpeed < 0.1)
+			this.moveSpeed = 0.1;
 	}
 	
 	public double getMoveAngle() {
@@ -173,6 +168,21 @@ public abstract class SpaceNode extends Polygon {
 	
 	public void setColliding(boolean colliding) {
 		this.colliding = colliding;
+	}
+	
+	public boolean colliding(SpaceNode other) {
+		if(getImage() == null || other.getImage() == null) {
+			return false;
+		}
+		double x = getLayoutX();
+		double y = getLayoutY();
+		double rx = other.getLayoutX();
+		double ry = other.getLayoutY();
+		double w = getImage().getWidth();
+		double h = getImage().getHeight();
+		double rw = other.getImage().getWidth();
+		double rh = other.getImage().getHeight();
+		return x < rx + rw && x + w > rx && y < ry + rh && y + h > ry;
 	}
 	
 }

@@ -10,11 +10,6 @@ import game.asteroid_fx.SpaceCraft;
 public enum NodeState {
 	
 	/**
-	 * The {@link SpaceNode} is created but was never added to the list.
-	 */
-	CREATED,
-	
-	/**
 	 * The {@link SpaceNode} is currently alive in the world.
 	 */
 	ALIVE,
@@ -22,11 +17,6 @@ public enum NodeState {
 	/**
 	 * The {@link SpaceNode} is dead in our world.
 	 */
-	DEAD,
-	
-	/**
-	 * The {@link SpaceNode} is not in ur world list.
-	 */
-	REMOVED
+	DEAD
 	
 }

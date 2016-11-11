@@ -1,10 +1,10 @@
 package game.asteroid_fx;
 
+import game.asteroid_fx.node.NodeState;
 import game.asteroid_fx.node.SpaceNode;
-import game.asteroid_fx.node.impl.Rock;
+import game.asteroid_fx.node.impl.Meteor;
 import game.asteroid_fx.node.impl.Ship;
 import javafx.animation.Animation;
-import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -32,13 +32,17 @@ public class SpaceCraft extends Application {
 	
 	public static final int HEIGHT = 600;
 	
-	private final Group root = new Group();
+	public final static Group ROOT = new Group();
 	
-	private final Set<SpaceNode> nodes = new HashSet<>();
+	private final static Set<SpaceNode> NODES = new HashSet<>();
+	
+	private final static Set<SpaceNode> added = new HashSet<>();
+	
+	private final static Set<SpaceNode> removed = new HashSet<>();
 	
 	@Override
 	public void start(Stage stage) {
-		Scene scene = new Scene(root, WIDTH, HEIGHT, Color.BLACK);
+		Scene scene = new Scene(SpaceCraft.ROOT, WIDTH, HEIGHT, Color.BLACK);
 		
 		stage.setTitle("SpaceCraft by Artem Batutin");
 		stage.setResizable(false);
@@ -52,27 +56,30 @@ public class SpaceCraft extends Application {
 		add(ship);
 		add(ship2);
 		
-		//Random gen = new Random();
-		//for(int i = 0; i < 20; i++)
-			//add(new Rock(gen.nextInt(WIDTH), gen.nextInt(HEIGHT)));
+		Random gen = new Random();
+		for(int i = 0; i < 20; i++)
+			add(new Meteor(gen.nextInt(WIDTH), gen.nextInt(HEIGHT)));
 		
 		//Drawing loop of all space nodes, each 20 milliseconds(for 50 frames per seconds).
-		Timeline draw = new Timeline(new KeyFrame(Duration.millis(20), event -> nodes.forEach(SpaceNode::draw)));
+		Timeline draw = new Timeline(new KeyFrame(Duration.millis(20), event -> NODES.forEach(SpaceNode::draw)));
 		draw.setCycleCount(Animation.INDEFINITE);
 		draw.play();
 		
 		//Drawing loop of all space nodes, each 150 milliseconds.
-		Timeline pulse = new Timeline(new KeyFrame(Duration.millis(150), event -> nodes.forEach(n -> {
-			n.pulse();
-			if(n.isColliding()) {
-				System.out.println(nodes.size());
-				for(SpaceNode other : nodes) {
-					if(n.getLayoutBounds().intersects(other.getLayoutBounds())) {
-						n.collide(other);
+		Timeline pulse = new Timeline(new KeyFrame(Duration.millis(150), event -> {
+			handleNodes();
+			NODES.forEach(n -> {
+						n.pulse();
+						if(n.isColliding()) {
+							for(SpaceNode other : NODES) {
+								if(n != other && n.colliding(other)) {
+									n.collide(other);
+								}
+							}
+						}
 					}
-				}
-			}
-		})));
+			);
+		}));
 		pulse.setCycleCount(Animation.INDEFINITE);
 		pulse.play();
 		
@@ -85,9 +92,9 @@ public class SpaceCraft extends Application {
 	 * @param node the node to be added.
 	 * @return {@code true} if it was successfully added, {@code false} otherwise.
 	 */
-	public boolean add(SpaceNode node) {
-		if(nodes.add(node)) {
-			root.getChildren().add(node);
+	public static boolean add(SpaceNode node) {
+		if(added.add(node)) {
+			SpaceCraft.ROOT.getChildren().add(node);
 			return true;
 		}
 		return false;
@@ -97,9 +104,19 @@ public class SpaceCraft extends Application {
 	 * Removing a {@link SpaceNode} from the space.
 	 * @param node the node to be removed.
 	 */
-	public void remove(SpaceNode node) {
-		nodes.remove(node);
-		root.getChildren().remove(node);
+	public static void remove(SpaceNode node) {
+		if(removed.add(node)) {
+			SpaceCraft.ROOT.getChildren().remove(node);
+		}
+	}
+	
+	private void handleNodes() {
+		added.forEach(a -> a.setState(NodeState.ALIVE));
+		NODES.addAll(added);
+		added.clear();
+		removed.forEach(a -> a.setState(NodeState.DEAD));
+		NODES.removeAll(removed);
+		removed.clear();
 	}
 	
 }
