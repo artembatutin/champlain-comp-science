@@ -101,7 +101,7 @@ public abstract class SpaceNode extends ImageView {
 				onAdd();
 				break;
 			case DEAD:
-				onDie();
+				onRemove();
 				break;
 		}
 	}
@@ -115,7 +115,7 @@ public abstract class SpaceNode extends ImageView {
 	/**
 	 * The method executed when this {@link SpaceNode} dies.
 	 */
-	public void onDie() {
+	public void onRemove() {
 	}
 	
 	public double getVelocityX() {

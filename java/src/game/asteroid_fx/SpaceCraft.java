@@ -3,14 +3,17 @@ package game.asteroid_fx;
 import game.asteroid_fx.node.NodeState;
 import game.asteroid_fx.node.SpaceNode;
 import game.asteroid_fx.node.impl.Meteor;
-import game.asteroid_fx.node.impl.Ship;
+import game.asteroid_fx.node.impl.PowerUp;
+import game.asteroid_fx.node.impl.ship.Ship;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -28,9 +31,9 @@ public class SpaceCraft extends Application {
 		launch(args);
 	}
 	
-	public static final int WIDTH = 1000;
+	public static final int WIDTH = 1400;
 	
-	public static final int HEIGHT = 600;
+	public static final int HEIGHT = 900;
 	
 	public final static Group ROOT = new Group();
 	
@@ -43,7 +46,7 @@ public class SpaceCraft extends Application {
 	@Override
 	public void start(Stage stage) {
 		Scene scene = new Scene(SpaceCraft.ROOT, WIDTH, HEIGHT, Color.BLACK);
-		
+		scene.setFill(new ImagePattern(new Image("file:data/space/bg.png")));
 		stage.setTitle("SpaceCraft by Artem Batutin");
 		stage.setResizable(false);
 		stage.setScene(scene);
@@ -57,7 +60,7 @@ public class SpaceCraft extends Application {
 		add(ship2);
 		
 		Random gen = new Random();
-		for(int i = 0; i < 20; i++)
+		for(int i = 0; i < 40; i++)
 			add(new Meteor(gen.nextInt(WIDTH), gen.nextInt(HEIGHT)));
 		
 		//Drawing loop of all space nodes, each 20 milliseconds(for 50 frames per seconds).
@@ -66,7 +69,7 @@ public class SpaceCraft extends Application {
 		draw.play();
 		
 		//Drawing loop of all space nodes, each 150 milliseconds.
-		Timeline pulse = new Timeline(new KeyFrame(Duration.millis(150), event -> {
+		Timeline pulse = new Timeline(new KeyFrame(Duration.millis(100), event -> {
 			handleNodes();
 			NODES.forEach(n -> {
 				n.pulse();
@@ -81,6 +84,13 @@ public class SpaceCraft extends Application {
 		}));
 		pulse.setCycleCount(Animation.INDEFINITE);
 		pulse.play();
+		
+		//Spawning randomely power ups.
+		Timeline spawn = new Timeline(new KeyFrame(Duration.seconds(10), event -> {
+			add(new PowerUp(PowerUp.PowerType.random(), gen.nextInt(WIDTH - 40) + 20, gen.nextInt(HEIGHT - 40) + 20));
+		}));
+		spawn.setCycleCount(Animation.INDEFINITE);
+		spawn.play();
 		
 		//Displaying the stage.
 		stage.show();

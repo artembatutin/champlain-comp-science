@@ -1,6 +1,6 @@
 package game.asteroid_fx;
 
-import game.asteroid_fx.node.impl.Ship;
+import game.asteroid_fx.node.impl.ship.Ship;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;

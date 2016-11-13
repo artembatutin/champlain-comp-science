@@ -1,5 +1,6 @@
 package game.asteroid_fx.node.impl;
 
+import game.asteroid_fx.SpaceCraft;
 import game.asteroid_fx.node.NodeType;
 import game.asteroid_fx.node.SpaceNode;
 import javafx.scene.image.Image;
@@ -10,21 +11,45 @@ public class Meteor extends SpaceNode {
 	
 	private final double rotate;
 	
-	private final static String ROCK = "file:data/space/PNG/Meteors/meteorGrey_small2.png";
+	private final double bound;
+	
+	private final static String ROCK = "file:data/space/Meteors/meteorGrey_small2.png";
 	
 	public Meteor(int x, int y) {
 		super(NodeType.METEOR, new Image(ROCK), x, y);
-		rotate = new Random().nextInt(100) / 100.D;
+		Random gen = new Random();
+		rotate = gen.nextInt(100) / 100.D;
+		bound = getImage().getHeight() / 2;
+		int angle = gen.nextInt(360);
+		double xMove = (gen.nextInt(2) + 2) / 3;
+		double yMove = (gen.nextInt(2) + 2) / 3;
+		double velX = xMove * Math.cos(Math.toRadians(angle));
+		double velY = yMove * Math.sin(Math.toRadians(angle));
+		setVelocityX(gen.nextBoolean() ? -velX : velX);
+		setVelocityY(gen.nextBoolean() ? -velY : velY);
 	}
 	
 	@Override
 	public void draw() {
 		rotateProperty().set(getRotate() + rotate);
+		setLayoutX(getLayoutX() + getVelocityX());
+		setLayoutY(getLayoutY() + getVelocityY());
 	}
 	
 	@Override
 	public void pulse() {
+		//bounds
+		if(getLayoutX() < -bound) {
+			setLayoutX(SpaceCraft.WIDTH - bound);
+		} else if(getLayoutX() > SpaceCraft.WIDTH + bound) {
+			setLayoutX(bound);
+		}
 		
+		if(getLayoutY() < -bound) {
+			setLayoutY(SpaceCraft.HEIGHT - bound);
+		} else if(getLayoutY() > SpaceCraft.HEIGHT + bound) {
+			setLayoutY(bound);
+		}
 	}
 	
 	@Override

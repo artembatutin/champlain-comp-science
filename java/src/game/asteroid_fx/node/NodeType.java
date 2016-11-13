@@ -8,6 +8,8 @@ public enum NodeType {
 	
 	SHIP,
 	
+	SHIP_SHIELD,
+	
 	METEOR,
 	
 	BULLET

@@ -3,13 +3,14 @@ package game.asteroid_fx.node.impl;
 import game.asteroid_fx.SpaceCraft;
 import game.asteroid_fx.node.NodeType;
 import game.asteroid_fx.node.SpaceNode;
+import game.asteroid_fx.node.impl.ship.Ship;
 import javafx.scene.image.Image;
 
 public class Bullet extends SpaceNode {
 	
-	private final static String BULLP = "file:data/space/PNG/Lasers/bullet.png";
+	private final static String BULLP = "file:data/space/Lasers/bullet.png";
 	
-	private final static String BULLS = "file:data/space/PNG/Lasers/bullet2.png";
+	private final static String BULLS = "file:data/space/Lasers/bullet2.png";
 	
 	private final Ship ship;
 	
