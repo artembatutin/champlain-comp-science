@@ -31,9 +31,9 @@ public class SpaceCraft extends Application {
 		launch(args);
 	}
 	
-	public static final int WIDTH = 1400;
+	public static final int WIDTH = 1200;
 	
-	public static final int HEIGHT = 900;
+	public static final int HEIGHT = 800;
 	
 	public final static Group ROOT = new Group();
 	

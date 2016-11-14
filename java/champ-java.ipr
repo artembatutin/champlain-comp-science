@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactManager">
+    <artifact type="javafx" name="spacecraft">
+      <output-path>$PROJECT_DIR$/out/artifacts/spacecraft</output-path>
+      <properties id="javafx-properties">
+        <options>
+          <option name="appClass" value="game.asteroid_fx.SpaceCraft" />
+          <option name="description" value="" />
+          <option name="height" value="1200" />
+          <option name="htmlPlaceholderId" value="" />
+          <option name="title" value="SpaceCraft" />
+          <option name="vendor" value="" />
+          <option name="version" value="1" />
+          <option name="width" value="800" />
+        </options>
+      </properties>
+      <root id="root">
+        <element id="archive" name="champ_java.jar">
+          <element id="module-output" name="champ-java" />
+        </element>
+      </root>
+    </artifact>
+  </component>
   <component name="CompilerConfiguration">
     <resourceExtensions />
     <wildcardResourcePatterns>
