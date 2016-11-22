@@ -19,7 +19,7 @@ body {
 header {
     background-color: #000033;
     color: #FFFFFF;
-    background-image: url(sunset.jpg);
+    background-image: url('./assets/sunset.jpg');
     background-position: right;
     background-repeat: no-repeat;
     text-align: center;
@@ -113,36 +113,79 @@ footer {
 }
 
 @media only screen and (max-width: 1024px) {
-	body {
-		background-image: none;
-		background-color: white;
-		margin: 0;
-		padding: 0;
-	}
-	main {
-	    margin: 0;
-		padding: 0;
-	}
-
-	h2 {
-	    text-shadow: none;
-	}
-	#wrapper {
-	    width: 100%;
-	    margin: 0;
-	    margin: 0;
-	    box-shadow: none;
-	}
-	#locationVisual {
-	    height: 300px;
-	    background-repeat: no-repeat;
-	    background-size: 100% 100%;
-	}
+    body {
+        background-image: none;
+        background-color: white;
+        margin: 0;
+        padding: 0;
+    }
+    main {
+        margin: 0;
+    }
+    footer {
+        margin-left: 0;
+    }
+    h2 {
+        text-shadow: none;
+    }
+    nav {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li {
+        padding-left: 1em;
+        display: inline-block;
+    }
+    #wrapper {
+        width: 100%;
+        margin: 0;
+        margin: 0;
+        box-shadow: none;
+        min-width: 480px;
+    }
+    #locationVisual {
+        height: 300px;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        margin-left: 0;
+    }
 }
 
 @media only screen and (max-width: 480px) {
-	body {
-		background-image: none;
-		background-color: red;
+    body {
+        background-image: none;
+        background-color: white;
+        margin: 0;
+        padding: 0;
+    }
+	nav {
+		float: none;
+		width: 100%;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+	}
+	nav ul li {
+		padding: 5px;
+		width: 100%;
+		display: block;
+		border-bottom: 1px solid black;
+	}
+	#wrapper {
+        width: 100%;
+        margin: 0;
+        margin: 0;
+        box-shadow: none;
+        min-width: 0;
+    }
+    #locationVisual {
+		display: none;
+        height: 0;
+		width: 0;
+        margin-left: 0;
+    }
+	h1, h2, h3, footer {
+	    font-size: 100%;
 	}
 }
