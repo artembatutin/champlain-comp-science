@@ -1,0 +1,135 @@
+body {
+    width: 70%;
+    color: #000000;
+    font-family: verdana, arial, sans-serif;
+    background-color: #E8D882;
+    border: 2px solid black;
+    margin: 3% auto;
+    box-shadow: 1px 1px 1px 1px black;
+    -moz-box-shadow: 1px 1px 1px 1px black;
+    -webkit-box-shadow: 1px 1px 1px 1px black;
+}
+
+h1 {
+    margin-left: 2%;
+    margin-top: 2%;
+    font-size: 150%;
+    color: #663300;
+}
+
+footer {
+    font-size: 80%;
+    margin: 0;
+    padding: 8px 0;
+    text-align: center;
+    background-color: #CCAA66;
+    border-top: 2px solid black;
+}
+
+nav {
+	float: left;
+    width: 150px;
+}
+
+ul {
+    padding-left: 30px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+ul li ul {
+    font-size: 80%;
+}
+
+a {
+    text-decoration: none;
+}
+
+a {
+    color: #663300;
+}
+
+a:link {
+    color: #996633;
+}
+
+a:visited {
+    color: #330000;
+}
+
+a:hover {
+    color: #FFFFFF;
+}
+
+main {
+    padding-top: 30px;
+	padding-bottom: 15px;
+    margin-left: 150px;
+    background-color: #F1E8B0;
+}
+
+main ul, dl {
+    margin-left: 40px;
+}
+
+main p {
+    margin-left: 30px;
+}
+
+main img {
+    margin: 30px;
+    float: right;
+}
+
+header {
+    background-color: #CCAA66;
+    border-bottom: 2px solid black;
+}
+
+header img {
+    margin: 0 auto;
+    display: block;
+}
+
+table {
+    width: 90%;
+    padding: 5px 30px 20px 30px;
+}
+
+table td {
+    padding-left: 30px;
+}
+
+main table tr:nth-child(1), main table tr:nth-child(3) {
+    background-color: #CCAA66;
+}
+
+h2 {
+    padding-left: 5%;
+    margin: 0 auto;
+    width: 70%;
+    color: #663300;
+    text-shadow: 3px 3px 8px #663300;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+.month p {
+    margin-left: 20%;
+}
+
+.month audio {
+	margin-left: 20%;
+	margin-top: 15px;
+}
+
+.month img {
+    margin-right: 25%;
+    float: right;
+}
+
+.centered {
+    text-align: center;
+}
