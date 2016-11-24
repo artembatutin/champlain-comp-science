@@ -3,13 +3,13 @@ package sem1.week6;
 import java.util.Scanner;
 
 public class TimeCalculator {
-
+	
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-
+		
 		System.out.println("Seconds por favor?");
 		double seconds = input.nextDouble();
-
+		
 		if(seconds >= 86400) {
 			double day = seconds / 86400;
 			double hours = (seconds - day * 86400) / 3600;

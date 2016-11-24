@@ -110,7 +110,7 @@ public class Ship extends SpaceNode {
 			updateLife(life - 5);
 		}
 		if(other.getType() == NodeType.BULLET) {
-			if(shield == null&& !(((Bullet) other).getShip() == this)) {
+			if(shield == null && !(((Bullet) other).getShip() == this)) {
 				updateLife(life - 1);
 				SpaceCraft.remove(other);
 			}

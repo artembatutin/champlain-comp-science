@@ -8,13 +8,13 @@ public enum SoundMedium {
 	UNDEFINED(0),
 	
 	AIR(1100),
-
+	
 	WATER(4900),
-
+	
 	STEEL(16400);
-
+	
 	private final int feet;
-
+	
 	SoundMedium(int feet) {
 		this.feet = feet;
 	}
@@ -27,7 +27,7 @@ public enum SoundMedium {
 		}
 		return UNDEFINED;
 	}
-
+	
 	public int getFeet() {
 		return feet;
 	}

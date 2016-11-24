@@ -60,12 +60,13 @@ public class PowerUp extends SpaceNode {
 		};
 		
 		private Image image;
-	
+		
 		PowerType(String image) {
-			this.image = new Image("file:data/space/Power/"+image);
+			this.image = new Image("file:data/space/Power/" + image);
 		}
 		
-		public void effect(Ship ship) {}
+		public void effect(Ship ship) {
+		}
 		
 		public Image getImage() {
 			return image;
