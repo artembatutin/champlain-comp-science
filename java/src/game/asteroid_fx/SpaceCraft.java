@@ -47,7 +47,7 @@ public class SpaceCraft extends Application {
 	public void start(Stage stage) {
 		Scene scene = new Scene(SpaceCraft.ROOT, WIDTH, HEIGHT, Color.BLACK);
 		scene.setFill(new ImagePattern(new Image("file:data/space/bg.png")));
-		stage.setTitle("SpaceCraft by Artem Batutin");
+		stage.setTitle("BattleField by Artem Batutin");
 		stage.setResizable(false);
 		stage.setScene(scene);
 		
