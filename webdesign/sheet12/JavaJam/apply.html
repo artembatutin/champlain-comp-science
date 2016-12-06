@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- Index java jam page by Artem Batutin -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Java Jam - Index</title>
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="icon" type="images/ico" href="./icon.ico" />
+</head>
+
+<body class="box">
+
+    <!-- Header title -->
+    <header>
+        <a href="./index.html"><img src="assets/javalogo.gif" alt="Java jam" /></a>
+    </header>
+
+
+    <!-- The navigation bar with links -->
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a>&nbsp;</li>
+            <li><a href="./menu.html">Menu</a>&nbsp;</li>
+            <li>Music
+                <ul>
+                    <li><a href="./september.html">September</a></li>
+                    <li><a href="./october.html">October</a></li>
+                    <li><a href="./november.html">November</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Jobs</a></li>
+        </ul>
+    </nav>
+
+    <main style="margin-right: 0">
+        <p>Want to work at JavaJam? Fill out the form below to start your application.</p>
+
+        <div class="container">
+            <form>
+                <label for="pers">Name: </label>
+                <input type="text" name="pers" id="pers" />
+                <br /><br />
+
+                <label for="mail">Email: </label>
+                <input type="email" name="mail" id="mail" />
+                <br /><br />
+
+                <label for="phone">Telephone Number: </label>
+                <input type="tel" name="phone" id="phone" />
+                <br /><br />
+
+                <label for="pos">Position: </label>
+                <input type="text" name="pos" id="pos" />
+
+
+                <input type="radio" value="part" name="time" id="part" style="width: auto" />
+                <label for="part" style="width: auto">Part-Time</label>
+
+                <input type="radio" value="full" name="time" id="full" style="width: auto" />
+                <label for="full" style="width: auto">Full-Time</label>
+
+
+                <br /><br />
+                <label for="av">Date of Availability: </label>
+                <input type="date" name="av" id="av" />
+                <input type="checkbox" value="am" name="day" id="am" style="width: 30px" />
+                <label for="part" style="width: auto">AM</label>
+                <input type="checkbox" value="pm" name="day" id="pm" style="width: 30px" />
+                <label for="full" style="width: auto">PM</label>
+                <br /><br />
+                <label for="yexp">Yers of Experience</label>
+                <input type="number" name="yexp" id="yexp" />
+                <br /><br />
+                <label for="exp" style="vertical-align: top;">Experience: </label>
+                <textarea name="exp" id="exp" cols="40" rows="4"></textarea>
+                <br />
+                <input type="submit" style=" width: auto; display: block; margin: 0 auto;" value="Apply Now" />
+            </form>
+        </div>
+    </main>
+
+    <!-- The footer-->
+    <footer>
+        <!-- Copyrights and email-->
+        <p>&copy; Copyright 2016, Champlain Coffee House
+            <br>
+            <a href="mailto:artembatutin@gmail.com"><em>artem@batutin.com</em></a>
+    </footer>
+
+</body>
+
+</html>

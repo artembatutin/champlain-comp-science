@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!-- Menu java jam page by Artem Batutin -->
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Java Jam - Menu</title>
+	<link rel="stylesheet" href="./main.css" />
+	<link rel="icon" type="images/ico" href="./icon.ico" />
+	<script>
+		function price() {
+			var mugs = document.getElementById("mugs").value * 9.95;
+			var shirts = document.getElementById("shirts").value * 14.95;
+			document.getElementById("order").innerHTML = (mugs + shirts) + "$";
+		}
+
+		function mugCol() {
+			document.getElementById("mugs").style.backgroundColor = document.getElementById("mugColor").value;
+		}
+
+		function shirtCol() {
+			document.getElementById("shirts").style.backgroundColor = document.getElementById("shirtColor").value;
+		}
+
+		function sel() {
+			var x = document.getElementById('add');
+			if (document.getElementById("pick").checked) {
+				x.style.display = 'none';
+			} else {
+				x.style.display = 'inherit';
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<!-- Header title -->
+	<header>
+		<a href="./index.html"><img src="assets/javalogo.gif" alt="Java jam" /></a>
+	</header>
+
+	<!-- The navigation bar with links -->
+	<nav>
+		<ul>
+			<li><a href="./index.html">Home</a>&nbsp;</li>
+			<li><a href="./menu.html">Menu</a>&nbsp;</li>
+			<li>Music
+				<ul>
+					<li><a href="./september.html">September</a></li>
+					<li><a href="./october.html">October</a></li>
+					<li><a href="./november.html">November</a></li>
+				</ul>
+			</li>
+			<li><a href="./apply.html">Jobs</a></li>
+		</ul>
+	</nav>
+
+	<main style="margin-right: 0">
+		<h1>Coffee Selections</h1>
+		<!-- The description table -->
+		<table>
+			<tr>
+				<th>Coffee Mug</th>
+				<td>JavaJam mugs carry a full load of caffeine (12 oz.) to jump-start your morning.<br />$9.95</td>
+				<td style="padding: 0"><img alt="mug" src="./assets/javamug.gif" style="margin: 0" /></td>
+			</tr>
+			<tr>
+				<th>T-Shirt</th>
+				<td>JavaJam shirts are comfortable to wear to school and around town. 100% cotton.<br />$14.95</td>
+				<td style="padding: 0"><img alt="t-shirt" src="./assets/javashirt.gif" style="margin: 0" /></td>
+			</tr>
+		</table>
+
+		<div class="container">
+			<form>
+				<p><strong>Order: </strong><em id="order"></em></p>
+				<label for="mugs">Coffe Mugs: </label>
+				<input type="number" min="0" name="mugs" id="mugs" onChange="price()" />
+				<select id="mugColor" onChange="mugCol()">
+					<option value="blue" style="background-color: blue">Blue</option>
+					<option value="red" style="background-color: red">Red</option>
+					<option value="green" style="background-color: green">Green</option>
+					<option value="yellow" style="background-color: yellow">Yellow</option>
+					<option value="brown" style="background-color: brown">Brown</option>
+					<option value="white" style="background-color: white">White</option>
+					<option value="purple" style="background-color: purple">Purple</option>
+					<option value="violet" style="background-color: violet">Violet</option>
+					<option value="orange" style="background-color: orange">Orange</option>
+				</select>
+				<br />
+				<label for="shirts">T-Shirts: </label>
+				<input type="number" min="0" name="shirts" id="shirts" onChange="price()" />
+				<select id="shirtColor" onChange="shirtCol()">
+					<option value="blue" style="background-color: blue">Blue</option>
+					<option value="red" style="background-color: red">Red</option>
+					<option value="green" style="background-color: green">Green</option>
+					<option value="yellow" style="background-color: yellow">Yellow</option>
+					<option value="brown" style="background-color: brown">Brown</option>
+					<option value="white" style="background-color: white">White</option>
+					<option value="purple" style="background-color: purple">Purple</option>
+					<option value="violet" style="background-color: violet">Violet</option>
+					<option value="orange" style="background-color: orange">Orange</option>
+				</select>
+
+				<p><strong>Contact Information:</strong></p>
+				<label for="pers">Name: </label>
+				<input type="text" name="pers" id="pers" placeholder="Name" />
+				<br />
+
+				<label for="mail">Email: </label>
+				<input type="email" name="mail" id="mail" placeholder="Email" />
+				<br />
+
+				<label for="phone">Telephone Number: </label>
+				<input type="tel" name="phone" id="phone" placeholder="Phone number" />
+				<br />
+
+				<label for="add">Pickup at store: </label>
+				<input type="checkbox" name="pick" id="pick" onChange="sel()" style="width: auto" checked />
+				<input type="text" name="add" id="add" placeholder="Home address" style="display: none" />
+
+				<input type="submit" style=" width: auto; display: block; margin: 10px auto;" value="Order" />
+				<input type="reset" style=" width: auto; display: block; margin: 10px auto;" value="Reset" />
+			</form>
+		</div>
+	</main>
+
+	<!-- The footer-->
+	<footer>
+		<!-- Copyrights and email-->
+		<p>&copy; Copyright 2016, Champlain Coffee House<br>
+			<a href="mailto:artembatutin@gmail.com"><em>artem@batutin.com</em></a>
+	</footer>
+</body>
+
+</html>

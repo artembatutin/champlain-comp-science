@@ -15,13 +15,13 @@ public class Ice {
 		//Initializing variables.
 		File file = new File(PATH);
 		Scanner in = new Scanner(file);
-		Skaters[] sk = new Skaters[6];
+		Skaters[] sk = new Skaters[lines(PATH) / 5];
 		
 		//Reading data.
 		for(int i = 0; i < sk.length; i++) {
 			sk[i] = new Skaters(
-					in.nextLine(),//first name.
-					in.nextLine(),//last name.
+					in.nextLine(),//person1 name.
+					in.nextLine(),//person2 name.
 					in.nextLine(),//country.
 					in.nextLine().split(" "),//technical
 					in.nextLine().split(" ")//performance
@@ -33,7 +33,7 @@ public class Ice {
 		for(int i = 0; i < sk.length; i++) {
 			for(int s = 0; s < sk.length; s++) {
 				if(sk[i].getAverage() > sk[s].getAverage()) {
-					Skaters temp =  sk[s].copy();
+					Skaters temp = sk[s].copy();
 					sk[s] = sk[i].copy();
 					sk[i] = temp;
 				}
@@ -45,5 +45,22 @@ public class Ice {
 		for(Skaters s : sk) {
 			System.out.println(s.toString());
 		}
+	}
+	
+	/**
+	 * Counts how many lines there is in a defined file path.
+	 * @param path the path of the file
+	 * @return number of lines there is.
+	 * @throws FileNotFoundException file not found.
+	 */
+	private static int lines(String path) throws FileNotFoundException {
+		File file = new File(path);
+		Scanner in = new Scanner(file);
+		int l = 0;
+		while(in.hasNext()) {
+			in.nextLine();
+			l++;
+		}
+		return l;
 	}
 }
