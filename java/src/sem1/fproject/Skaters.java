@@ -1,9 +1,13 @@
 package sem1.fproject;
 
+import java.util.Scanner;
+
 /**
  * Represents a single Skaters.
  */
 public class Skaters {
+	
+	private final static int JUDGES = 8;
 	
 	/**
 	 * The name of the fist person.
@@ -30,32 +34,33 @@ public class Skaters {
 	 */
 	private double performance;
 	
+	private Skaters() {
+		//Preventing empty creation of this object.
+	}
+	
 	/**
 	 * Creates a new {@link Skaters}.
-	 * @param firstPersonName the last name of the skater.
-	 * @param secondPersonName the first name of the skater.
-	 * @param country the country of the skater.
-	 * @param technical the technical score array of the skater.
-	 * @param performance the performance score array of the skater.
+	 * @param in the scanner to create our class.
 	 */
-	Skaters(String firstPersonName, String secondPersonName, String country, String[] technical, String[] performance) {
-		this.setFirstPersonName(firstPersonName);
-		this.setSecondPersonName(secondPersonName);
-		this.setCountry(country);
+	Skaters(Scanner in) {
+		this.setFirstPersonName(in.nextLine());
+		this.setSecondPersonName(in.nextLine());
+		this.setCountry(in.nextLine());
 		
 		//Setting technical average.
 		double tech = 0;
-		for(String t : technical)
-			tech += Double.parseDouble(t);
-		tech /= technical.length;
+		for(int t = 0; t < JUDGES; t++)
+			tech += in.nextDouble();
+		tech /= JUDGES;
 		this.setTechnical(tech);
 		
 		//Setting performance average.
 		double perf = 0;
-		for(String p : performance)
-			perf += Double.parseDouble(p);
-		perf /= performance.length;
+		for(int p = 0; p < JUDGES; p++)
+			perf += in.nextDouble();
+		perf /= JUDGES;
 		this.setPerformance(perf);
+		System.out.println(in.nextLine());//skip the enter char.
 	}
 	
 	/**

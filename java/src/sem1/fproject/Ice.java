@@ -19,13 +19,7 @@ public class Ice {
 		
 		//Reading data.
 		for(int i = 0; i < sk.length; i++) {
-			sk[i] = new Skaters(
-					in.nextLine(),//person1 name.
-					in.nextLine(),//person2 name.
-					in.nextLine(),//country.
-					in.nextLine().split(" "),//technical
-					in.nextLine().split(" ")//performance
-			);
+			sk[i] = new Skaters(in);
 			System.out.println("read: " + sk[i].toString());
 		}
 		
