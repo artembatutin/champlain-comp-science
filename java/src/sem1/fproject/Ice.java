@@ -9,8 +9,16 @@ import java.util.Scanner;
  */
 public class Ice {
 	
+	/**
+	 * The path to our skater's class.
+	 */
 	private static final String PATH = "./data/skaters.txt";
 	
+	/**
+	 * The main method of our class.
+	 * @param a starting arguments array.
+	 * @throws FileNotFoundException
+	 */
 	public static void main(String[] a) throws FileNotFoundException {
 		//Initializing variables.
 		File file = new File(PATH);

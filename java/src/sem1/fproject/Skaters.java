@@ -3,10 +3,13 @@ package sem1.fproject;
 import java.util.Scanner;
 
 /**
- * Represents a single Skaters.
+ * Represents a pair of skaters.
  */
 public class Skaters {
 	
+	/**
+	 * A constant variable representing how many judges scores there is.
+	 */
 	private final static int JUDGES = 8;
 	
 	/**
@@ -34,6 +37,9 @@ public class Skaters {
 	 */
 	private double performance;
 	
+	/**
+	 * In this context, we don't want to create a {@link Skaters} without any data.
+	 */
 	private Skaters() {
 		//Preventing empty creation of this object.
 	}
@@ -60,7 +66,7 @@ public class Skaters {
 			perf += in.nextDouble();
 		perf /= JUDGES;
 		this.setPerformance(perf);
-		System.out.println(in.nextLine());//skip the enter char.
+		in.nextLine();//skips to the next line.
 	}
 	
 	/**
