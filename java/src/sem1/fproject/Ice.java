@@ -17,7 +17,7 @@ public class Ice {
 	/**
 	 * The main method of our class.
 	 * @param a starting arguments array.
-	 * @throws FileNotFoundException
+	 * @throws FileNotFoundException file may not be found.
 	 */
 	public static void main(String[] a) throws FileNotFoundException {
 		//Initializing variables.
@@ -26,9 +26,10 @@ public class Ice {
 		Skaters[] sk = new Skaters[lines(PATH) / 5];
 		
 		//Reading data.
+		System.out.println("Reading:");
 		for(int i = 0; i < sk.length; i++) {
 			sk[i] = new Skaters(in);
-			System.out.println("read: " + sk[i].toString());
+			System.out.println(sk[i].toString());
 		}
 		
 		//Sorting array.
@@ -44,8 +45,11 @@ public class Ice {
 		
 		//Displaying sorted array.
 		System.out.println("Sorted:");
-		for(Skaters s : sk) {
-			System.out.println(s.toString());
+		String[] positions = new String[]{ "Gold: ", "Silver: ", "Bronze: "};
+		for(int i = 0; i < sk.length; i++) {
+			if(i < positions.length)
+				System.out.print(positions[i]);
+			System.out.println(sk[i].toString());
 		}
 	}
 	

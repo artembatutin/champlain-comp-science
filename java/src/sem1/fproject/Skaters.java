@@ -66,7 +66,8 @@ public class Skaters {
 			perf += in.nextDouble();
 		perf /= JUDGES;
 		this.setPerformance(perf);
-		in.nextLine();//skips to the next line.
+		if(in.hasNext())//the end part might not have a new line.
+			in.nextLine();//skip the enter char.
 	}
 	
 	/**
@@ -102,23 +103,23 @@ public class Skaters {
 		return "[" + getCountry() + "] " + getSecondPersonName() + " & " + getFirstPersonName() + " - tech:" + getTechnical() + " : perf:" + getPerformance() + " | average: " + getAverage();
 	}
 	
-	private String getFirstPersonName() {
+	public String getFirstPersonName() {
 		return firstPersonName;
 	}
 	
-	private String getSecondPersonName() {
+	public String getSecondPersonName() {
 		return secondPersonName;
 	}
 	
-	private String getCountry() {
+	public String getCountry() {
 		return country;
 	}
 	
-	private double getTechnical() {
+	public double getTechnical() {
 		return technical;
 	}
 	
-	private double getPerformance() {
+	public double getPerformance() {
 		return performance;
 	}
 	
