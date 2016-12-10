@@ -51,6 +51,9 @@ public class Ice {
 				System.out.print(positions[i]);
 			System.out.println(sk[i].toString());
 		}
+		
+		//closing scanner even if the program will exit anyways.
+		in.close();
 	}
 	
 	/**
