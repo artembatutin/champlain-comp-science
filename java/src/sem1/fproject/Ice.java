@@ -47,6 +47,9 @@ public class Ice {
 		for(Skaters s : sk) {
 			System.out.println(s.toString());
 		}
+		
+		//closing scanner even if the program will exit anyways.
+		in.close();
 	}
 	
 	/**
