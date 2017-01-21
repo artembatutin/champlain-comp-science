@@ -1,4 +1,4 @@
-package game.asteroid_fx;
+package game.asteroid_fx.core;
 
 import game.asteroid_fx.node.impl.ship.Ship;
 import javafx.event.EventHandler;

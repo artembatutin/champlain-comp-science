@@ -1,5 +1,8 @@
 package game.asteroid_fx;
 
+import game.asteroid_fx.core.GameLoop;
+import game.asteroid_fx.core.GameManager;
+import game.asteroid_fx.core.InputManager;
 import game.asteroid_fx.node.NodeState;
 import game.asteroid_fx.node.SpaceNode;
 import game.asteroid_fx.node.impl.Meteor;
@@ -9,8 +12,10 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
@@ -25,7 +30,7 @@ import java.util.Set;
  * The main game of asteroids.
  * @author Artem Batutin <artembatutin@gmail.com>
  */
-public class SpaceCraft extends Application {
+public class Game extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
@@ -45,7 +50,8 @@ public class SpaceCraft extends Application {
 	
 	@Override
 	public void start(Stage stage) {
-		Scene scene = new Scene(SpaceCraft.ROOT, WIDTH, HEIGHT, Color.BLACK);
+		//Preparing the game.
+		Scene scene = new Scene(Game.ROOT, WIDTH, HEIGHT, Color.BLACK);
 		scene.setFill(new ImagePattern(new Image("file:data/space/bg.png")));
 		stage.setTitle("BattleField by Artem Batutin");
 		stage.setResizable(false);
@@ -63,27 +69,10 @@ public class SpaceCraft extends Application {
 		for(int i = 0; i < 40; i++)
 			add(new Meteor(gen.nextInt(WIDTH), gen.nextInt(HEIGHT)));
 		
-		//Drawing loop of all space nodes, each 20 milliseconds(for 50 frames per seconds).
-		Timeline draw = new Timeline(new KeyFrame(Duration.millis(20), event -> NODES.forEach(SpaceNode::draw)));
-		draw.setCycleCount(Animation.INDEFINITE);
-		draw.play();
-		
-		//Drawing loop of all space nodes, each 150 milliseconds.
-		Timeline pulse = new Timeline(new KeyFrame(Duration.millis(100), event -> {
-			handleNodes();
-			NODES.forEach(n -> {
-				n.pulse();
-				if(n.isColliding()) {
-					for(SpaceNode other : NODES) {
-						if(n != other && n.colliding(other)) {
-							n.collide(other);
-						}
-					}
-				}
-			});
-		}));
-		pulse.setCycleCount(Animation.INDEFINITE);
-		pulse.play();
+		//Starting the game engine.
+		GameManager manager = new GameManager(this);
+		GameLoop loop = new GameLoop(manager);
+		loop.start();
 		
 		//Spawning randomely power ups.
 		Timeline spawn = new Timeline(new KeyFrame(Duration.seconds(10), event -> {
@@ -103,8 +92,10 @@ public class SpaceCraft extends Application {
 	 */
 	public static boolean add(SpaceNode node) {
 		if(added.add(node)) {
-			SpaceCraft.ROOT.getChildren().add(node);
-			return true;
+			boolean flag = Game.ROOT.getChildren().add(node);
+			if(!flag)
+				added.remove(node);
+			return flag;
 		}
 		return false;
 	}
@@ -113,19 +104,42 @@ public class SpaceCraft extends Application {
 	 * Removing a {@link SpaceNode} from the space.
 	 * @param node the node to be removed.
 	 */
-	public static void remove(SpaceNode node) {
+	public static boolean remove(SpaceNode node) {
 		if(removed.add(node)) {
-			SpaceCraft.ROOT.getChildren().remove(node);
+			boolean flag = Game.ROOT.getChildren().remove(node);
+			if(!flag)
+				added.remove(node);
+			return flag;
 		}
+		return false;
 	}
 	
-	private void handleNodes() {
-		added.forEach(a -> a.setState(NodeState.ALIVE));
-		NODES.addAll(added);
-		added.clear();
-		removed.forEach(a -> a.setState(NodeState.DEAD));
-		NODES.removeAll(removed);
-		removed.clear();
+	/**
+	 * Handling the adding and removal of our nodes.
+	 */
+	public void handleNodes() {
+		Platform.runLater(() -> {
+			//adding nodes to the game.
+			if(added.size() > 0) {
+				added.forEach(a -> a.setState(NodeState.ALIVE));
+				NODES.addAll(added);
+				added.clear();
+			}
+			//removing nodes from the game.
+			if(removed.size() > 0) {
+				removed.forEach(a -> a.setState(NodeState.DEAD));
+				NODES.removeAll(removed);
+				removed.clear();
+			}
+		});
+	}
+	
+	/**
+	 * Gets the active nodes on the scene.
+	 * @return the active {@link SpaceNode}s.
+	 */
+	public Set<SpaceNode> getNodes() {
+		return NODES;
 	}
 	
 }

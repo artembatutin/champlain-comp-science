@@ -1,6 +1,6 @@
 package game.asteroid_fx.node.impl.ship;
 
-import game.asteroid_fx.SpaceCraft;
+import game.asteroid_fx.Game;
 import game.asteroid_fx.node.NodeType;
 import game.asteroid_fx.node.SpaceNode;
 import game.asteroid_fx.node.impl.Bullet;
@@ -20,7 +20,7 @@ public class ShipShield extends SpaceNode {
 	private int life = 120;
 	
 	public ShipShield(Ship ship) {
-		super(NodeType.SHIP_SHIELD, SHIP_3, ship.getLayoutX(), ship.getLayoutY());
+		super(NodeType.SHIP_ASSET, SHIP_3, ship.getLayoutX(), ship.getLayoutY());
 		this.ship = ship;
 		setColliding(true);
 		setLayoutX(ship.getLayoutX());
@@ -44,12 +44,15 @@ public class ShipShield extends SpaceNode {
 		if(other.getType() == NodeType.BULLET) {
 			Bullet bul = (Bullet) other;
 			if(bul.getShip() != ship) {
-				SpaceCraft.remove(other);
+				Game.remove(other);
 				onHit();
 			}
 		}
 	}
 	
+	/**
+	 * Operation handled once a bullet hits our shield.
+	 */
 	private void onHit() {
 		int prev = life;
 		if(prev == 80)

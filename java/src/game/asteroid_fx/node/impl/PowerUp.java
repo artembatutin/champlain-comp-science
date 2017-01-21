@@ -1,6 +1,6 @@
 package game.asteroid_fx.node.impl;
 
-import game.asteroid_fx.SpaceCraft;
+import game.asteroid_fx.Game;
 import game.asteroid_fx.node.NodeType;
 import game.asteroid_fx.node.SpaceNode;
 import game.asteroid_fx.node.impl.ship.Ship;
@@ -33,7 +33,7 @@ public class PowerUp extends SpaceNode {
 	@Override
 	public void collide(SpaceNode other) {
 		if(other.getType() == NodeType.SHIP) {
-			SpaceCraft.remove(this);
+			Game.remove(this);
 			type.effect((Ship) other);
 		}
 	}
@@ -62,7 +62,7 @@ public class PowerUp extends SpaceNode {
 		private Image image;
 		
 		PowerType(String image) {
-			this.image = new Image("file:data/space/Power/" + image);
+			this.image = new Image("file:data/space/power/" + image);
 		}
 		
 		public void effect(Ship ship) {

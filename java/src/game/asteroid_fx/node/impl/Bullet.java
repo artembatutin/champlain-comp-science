@@ -1,6 +1,6 @@
 package game.asteroid_fx.node.impl;
 
-import game.asteroid_fx.SpaceCraft;
+import game.asteroid_fx.Game;
 import game.asteroid_fx.node.NodeType;
 import game.asteroid_fx.node.SpaceNode;
 import game.asteroid_fx.node.impl.ship.Ship;
@@ -8,10 +8,8 @@ import javafx.scene.image.Image;
 
 public class Bullet extends SpaceNode {
 	
-	private final static String BULLP = "file:data/space/Lasers/bullet.png";
-	
-	private final static String BULLS = "file:data/space/Lasers/bullet2.png";
-	
+	private final static String BULLP = "file:data/space/lasers/bullet.png";
+	private final static String BULLS = "file:data/space/lasers/bullet2.png";
 	private final Ship ship;
 	
 	/**
@@ -48,24 +46,24 @@ public class Bullet extends SpaceNode {
 		boolean remove = false;
 		if(getLayoutX() < -bound) {
 			remove = true;
-		} else if(getLayoutX() > SpaceCraft.WIDTH + bound) {
+		} else if(getLayoutX() > Game.WIDTH + bound) {
 			remove = true;
 		}
 		
 		if(getLayoutY() < -bound) {
 			remove = true;
-		} else if(getLayoutY() > SpaceCraft.HEIGHT + bound) {
+		} else if(getLayoutY() > Game.HEIGHT + bound) {
 			remove = true;
 		}
 		if(remove)
-			SpaceCraft.remove(this);
+			Game.remove(this);
 	}
 	
 	@Override
 	public void collide(SpaceNode other) {
 		if(other.getType() == NodeType.METEOR) {
-			SpaceCraft.remove(other);
-			SpaceCraft.remove(this);
+			Game.remove(other);
+			Game.remove(this);
 		}
 	}
 	

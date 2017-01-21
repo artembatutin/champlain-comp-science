@@ -1,10 +1,10 @@
 package game.asteroid_fx.node;
 
-import game.asteroid_fx.SpaceCraft;
+import game.asteroid_fx.Game;
 
 /**
  * The state of our {@link SpaceNode}.
- * world in this context stands for the our {@link SpaceNode} list in {@link SpaceCraft}.
+ * world in this context stands for the our {@link SpaceNode} list in {@link Game}.
  * @author Artem Batutin <artembatutin@gmail.com>
  */
 public enum NodeState {

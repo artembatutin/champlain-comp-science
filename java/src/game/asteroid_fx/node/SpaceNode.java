@@ -30,11 +30,6 @@ public abstract class SpaceNode extends ImageView {
 	private double velocityY;
 	
 	/**
-	 * The moving speed of this {@link SpaceNode}.
-	 */
-	private double moveSpeed;
-	
-	/**
 	 * The moving angle of this {@link SpaceNode}.
 	 */
 	private double moveAngle;
@@ -126,6 +121,14 @@ public abstract class SpaceNode extends ImageView {
 		this.velocityX = velocityX;
 	}
 	
+	public void addVelocityX(double amount) {
+		velocityX += amount;
+	}
+	
+	public void revertVelocityX(double amount) {
+		this.velocityX += -this.velocityX * amount;
+	}
+	
 	public double getVelocityY() {
 		return velocityY;
 	}
@@ -134,24 +137,12 @@ public abstract class SpaceNode extends ImageView {
 		this.velocityY = velocityY;
 	}
 	
-	public double getMoveSpeed() {
-		return moveSpeed;
+	public void addVelocityY(double amount) {
+		velocityY += amount;
 	}
 	
-	public void setMoveSpeed(double speed) {
-		moveSpeed = speed;
-	}
-	
-	public void increaseMoveSpeed(double speed) {
-		this.moveSpeed += speed;
-		if(this.moveSpeed >= 1)
-			this.moveSpeed = 1;
-	}
-	
-	public void decreaseMoveSpeed(double speed) {
-		this.moveSpeed -= speed;
-		if(this.moveSpeed < 0.1)
-			this.moveSpeed = 0.1;
+	public void revertVelocityY(double amount) {
+		this.velocityY += -this.velocityY * amount;
 	}
 	
 	public double getMoveAngle() {

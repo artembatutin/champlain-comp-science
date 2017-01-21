@@ -8,7 +8,7 @@ public enum NodeType {
 	
 	SHIP,
 	
-	SHIP_SHIELD,
+	SHIP_ASSET,
 	
 	METEOR,
 	

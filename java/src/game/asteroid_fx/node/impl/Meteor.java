@@ -1,6 +1,6 @@
 package game.asteroid_fx.node.impl;
 
-import game.asteroid_fx.SpaceCraft;
+import game.asteroid_fx.Game;
 import game.asteroid_fx.node.NodeType;
 import game.asteroid_fx.node.SpaceNode;
 import javafx.scene.image.Image;
@@ -13,7 +13,7 @@ public class Meteor extends SpaceNode {
 	
 	private final double bound;
 	
-	private final static String ROCK = "file:data/space/Meteors/meteorGrey_small2.png";
+	private final static String ROCK = "file:data/space/meteors/meteorGrey_small2.png";
 	
 	public Meteor(int x, int y) {
 		super(NodeType.METEOR, new Image(ROCK), x, y);
@@ -40,14 +40,14 @@ public class Meteor extends SpaceNode {
 	public void pulse() {
 		//bounds
 		if(getLayoutX() < -bound) {
-			setLayoutX(SpaceCraft.WIDTH - bound);
-		} else if(getLayoutX() > SpaceCraft.WIDTH + bound) {
+			setLayoutX(Game.WIDTH - bound);
+		} else if(getLayoutX() > Game.WIDTH + bound) {
 			setLayoutX(bound);
 		}
 		
 		if(getLayoutY() < -bound) {
-			setLayoutY(SpaceCraft.HEIGHT - bound);
-		} else if(getLayoutY() > SpaceCraft.HEIGHT + bound) {
+			setLayoutY(Game.HEIGHT - bound);
+		} else if(getLayoutY() > Game.HEIGHT + bound) {
 			setLayoutY(bound);
 		}
 	}
