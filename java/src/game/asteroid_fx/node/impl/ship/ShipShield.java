@@ -11,12 +11,19 @@ import javafx.scene.image.Image;
  */
 public class ShipShield extends SpaceNode {
 	
-	private final static Image SHIP_1 = new Image("file:data/space/Effects/shield1.png");
-	private final static Image SHIP_2 = new Image("file:data/space/Effects/shield2.png");
-	private final static Image SHIP_3 = new Image("file:data/space/Effects/shield3.png");
+	/* Several shield images. */
+	private final static Image SHIP_1 = new Image("file:data/space/effects/shield1.png");
+	private final static Image SHIP_2 = new Image("file:data/space/effects/shield2.png");
+	private final static Image SHIP_3 = new Image("file:data/space/effects/shield3.png");
 	
+	/**
+	 * The ship instance.
+	 */
 	private final Ship ship;
 	
+	/**
+	 * The life of this shield.
+	 */
 	private int life = 120;
 	
 	public ShipShield(Ship ship) {
@@ -59,7 +66,7 @@ public class ShipShield extends SpaceNode {
 			setImage(SHIP_2);
 		if(prev == 40)
 			setImage(SHIP_1);
-		life = prev - 1;
+		life = prev - 5;
 		if(life <= 0) {
 			ship.setShield(null);
 		}

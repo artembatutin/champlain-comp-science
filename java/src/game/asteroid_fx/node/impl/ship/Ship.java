@@ -74,20 +74,26 @@ public class Ship extends SpaceNode {
 	public Ship(boolean primary) {
 		super(NodeType.SHIP, new Image(primary ? SHIP_1 : SHIP_2), primary ? 100 : 800, 120);
 		this.primary = primary;
-		this.damage = new ShipDamage(this);
+		this.damage = new ShipDamage();
 		setColliding(true);
 		if(primary) {
 			full = new Rectangle(100, 30, 200, 20);
-			full.setFill(Color.RED);
-			lifeBar = new Rectangle(100, 30, 200, 20);
-			lifeBar.setFill(Color.GREEN);
+			full.setFill(Color.BLACK);
+			full.setStroke(Color.BLACK);
+			full.setOpacity(0.5);
+			lifeBar = new Rectangle(100, 30, 200, 19);
+			lifeBar.setFill(Color.BLUE);
+			lifeBar.setOpacity(0.7);
 			lifeText.setLayoutX(150);
 			lifeText.setLayoutX(30);
 		} else {
 			full = new Rectangle(Game.WIDTH - 300, 30, 200, 20);
-			full.setFill(Color.RED);
+			full.setFill(Color.BLACK);
+			full.setStroke(Color.BLACK);
+			full.setOpacity(0.5);
 			lifeBar = new Rectangle(Game.WIDTH - 300, 30, 200, 20);
-			lifeBar.setFill(Color.GREEN);
+			lifeBar.setFill(Color.RED);
+			lifeBar.setOpacity(0.7);
 			lifeText.setLayoutX(Game.WIDTH - 200);
 			lifeText.setLayoutX(30);
 		}
@@ -95,13 +101,12 @@ public class Ship extends SpaceNode {
 	
 	@Override
 	public void draw() {
+		damage.draw(getRotate(), getLayoutX(), getLayoutY());
 	}
 	
 	@Override
 	public void pulse() {
 		handleKeys();
-		if(primary)
-			System.out.println(powerShot);
 		setLayoutX(getLayoutX() + getVelocityX());
 		setLayoutY(getLayoutY() + getVelocityY());
 		revertVelocityX(0.025f);
@@ -131,7 +136,7 @@ public class Ship extends SpaceNode {
 		}
 		if(other.getType() == NodeType.BULLET) {
 			if(shield == null && !(((Bullet) other).getShip() == this)) {
-				updateLife(life - 1);
+				updateLife(life - 5);
 				Game.remove(other);
 			}
 		}
@@ -149,6 +154,7 @@ public class Ship extends SpaceNode {
 		Game.ROOT.getChildren().remove(full);
 		Game.ROOT.getChildren().remove(lifeText);
 		Game.ROOT.getChildren().remove(lifeBar);
+		Game.ROOT.getChildren().remove(damage);
 	}
 	
 	/**
@@ -184,11 +190,11 @@ public class Ship extends SpaceNode {
 		
 		//visual damage.
 		if(life < 350 && damage.getStage() != LOW)
-			damage.setStage(LOW);
+			damage.setStage(this, LOW);
 		if(life < 200 && damage.getStage() != ShipDamage.DamageStage.MEDIUM)
-			damage.setStage(MEDIUM);
+			damage.setStage(this, MEDIUM);
 		if(life < 200 && damage.getStage() != ShipDamage.DamageStage.MEDIUM)
-			damage.setStage(HIGH);
+			damage.setStage(this, HIGH);
 		
 		//ui update
 		this.life = life;
@@ -224,7 +230,7 @@ public class Ship extends SpaceNode {
 			}
 			
 			//shooting.
-			if((primary && key == KeyCode.F) || (!primary && key == KeyCode.M) && waitShoot > 10) {
+			if(waitShoot > 5 && ((primary && key == KeyCode.F) || (!primary && key == KeyCode.M))) {
 				final double x = getLayoutX() + getImage().getWidth() / 2 - 5;
 				final double y = getLayoutY() + getImage().getHeight() / 2 - 5;
 				shoot(x, y);

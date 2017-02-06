@@ -13,10 +13,8 @@ public class Meteor extends SpaceNode {
 	
 	private final double bound;
 	
-	private final static String ROCK = "file:data/space/meteors/meteorGrey_small2.png";
-	
 	public Meteor(int x, int y) {
-		super(NodeType.METEOR, new Image(ROCK), x, y);
+		super(NodeType.METEOR, new Image("file:" + RockType.random().img), x, y);
 		Random gen = new Random();
 		rotate = gen.nextInt(100) / 100.D;
 		bound = getImage().getHeight() / 2;
@@ -54,6 +52,50 @@ public class Meteor extends SpaceNode {
 	
 	@Override
 	public void collide(SpaceNode other) {
+		
+	}
+	
+	/**
+	 * Enumeration of several meteor types.
+	 */
+	private enum RockType {
+		/**
+		 * A small meteor.
+		 */
+		SMALL("meteorGrey_tiny"),
+		
+		/**
+		 * A medium meteor.
+		 */
+		MEDIUM("meteorGrey_small"),
+		
+		/**
+		 * A large meteor.
+		 */
+		LARGE("meteorGrey_med");
+		
+		/**
+		 * The path to the image file.
+		 */
+		private final String img;
+		
+		/**
+		 * Constructs a new {@link RockType}.
+		 * @param img the image name.
+		 */
+		RockType(String img) {
+			this.img = "./data/space/meteors/" +img + (new Random().nextInt(1) + 1) + ".png";
+		}
+		
+		/**
+		 * Getting an random rock type.
+		 * @return rock type.
+		 */
+		public static RockType random() {
+			Random gen = new Random();
+			RockType[] values = values();
+			return values[gen.nextInt(values.length)];
+		}
 		
 	}
 }

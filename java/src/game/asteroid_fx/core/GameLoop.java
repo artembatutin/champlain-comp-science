@@ -62,11 +62,9 @@ public class GameLoop extends AnimationTimer {
 		//eating steps depending on time.
 		while(accumulatedTime >= STEP) {
 			manager.pulse();//pulsing a step.
+			manager.render();
 			accumulatedTime -= STEP;
 		}
-		
-		//rendering the scene.
-		manager.render();
 		
 		//frames per second counter.
 		accumulatedTimeFPS += secondsElapsed;

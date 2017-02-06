@@ -13,29 +13,26 @@ import static game.asteroid_fx.node.impl.ship.ShipDamage.DamageStage.NOT_VISIBLE
 public class ShipDamage extends SpaceNode {
 	
 	/**
-	 * The ship to which this damage image is applied on.
-	 */
-	private final Ship ship;
-	
-	/**
 	 * The stage of this damage, visually.
 	 */
 	private DamageStage stage;
 	
 	/**
 	 * Creates a new {@link ShipDamage}.
-	 * @param ship the damaged ship.
 	 */
-	public ShipDamage(Ship ship) {
-		super(NodeType.SHIP_ASSET, null, ship.getLayoutX(), ship.getLayoutY());
-		this.ship = ship;
+	public ShipDamage() {
+		super(NodeType.SHIP_ASSET, null, 0, 0);
+	}
+	
+	public void draw(double rotate, double x, double y) {
+		setRotate(rotate);
+		setLayoutX(x);
+		setLayoutY(y);
 	}
 	
 	@Override
 	public void draw() {
-		setRotate(ship.getRotate());
-		setLayoutX(ship.getLayoutX());
-		setLayoutY(ship.getLayoutY());
+		
 	}
 	
 	@Override
@@ -58,9 +55,10 @@ public class ShipDamage extends SpaceNode {
 	
 	/**
 	 * Setting the stage of this damage.
+	 * @param ship to change view priority.
 	 * @param stage new stage to set.
 	 */
-	public void setStage(DamageStage stage) {
+	public void setStage(Ship ship, DamageStage stage) {
 		if(stage == NOT_VISIBLE) {
 			setImage(null);
 			Game.remove(this);
@@ -68,6 +66,8 @@ public class ShipDamage extends SpaceNode {
 			Game.remove(this);
 			setImage(new Image(stage.getImg()));
 			Game.add(this);
+			this.toBack();
+			ship.toBack();
 		}
 		this.stage = stage;
 	}

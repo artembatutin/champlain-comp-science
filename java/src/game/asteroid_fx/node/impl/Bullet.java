@@ -56,7 +56,7 @@ public class Bullet extends SpaceNode {
 			remove = true;
 		}
 		if(remove)
-			Game.remove(this);
+			System.out.println("removed: " + Game.remove(this));
 	}
 	
 	@Override
