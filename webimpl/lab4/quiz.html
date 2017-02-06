@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>FAA Private Pilot Quiz</title>
+</head>
+<script>
+    function done() {
+        var good = ["a", "c", "b", "b", "a"];
+        var points = 0;
+        for(var i = 0; i < good.length; i++) {
+            if(good[i] == document.getElementById("q" + i).value) {
+                points += 1;
+            }
+        }
+        alert("You got " + points + " points!");
+    }
+</script>
+<body>
+<h1>FAA Private Pilot Quiz</h1>
+<form onsubmit="done(); return false;">
+    <p>1. The term "angle of attack" is defined as the angle</p>
+    <p>
+        <input type="radio" id="question1a" name="q1" value="a" />Between the wing chord line and the relative wind<br /> <!-- correct answer -->
+        <input type="radio" id="question1b" name="q1" value="b" />Between the airplane's climb angle and the horizon<br />
+        <input type="radio" id="question1c" name="q1" value="c" />Formed by the longitudinal axis of the airplane and the chord line of the wing
+    </p>
+
+    <p>2. What is the purpose of the rudder on an airplane?</p>
+    <p>
+        <input type="radio" id="question2a" name="q2" value="a" />To control roll<br />
+        <input type="radio" id="question2b" name="q2" value="b" />To control overbanking tendency<br />
+        <input type="radio" id="question2c" name="q2" value="c" />To control yaw<!-- correct answer -->
+    </p>
+    <p>3. An airplane said to be inherently stable will?</p>
+    <p>
+        <input type="radio" id="question3a" name="q3" value="a" />Be difficult to stall<br />
+        <input type="radio" id="question3b" name="q3" value="b" />Require less effort to control<br /><!-- correct answer -->
+        <input type="radio" id="question3c" name="q3" value="c" />Not spin
+    </p>
+    <p>4. Which basic flight maneuver increases the load factor on an airplane as compared to straight-and-level flight?</p>
+    <p>
+        <input type="radio" id="question4a" name="q4" value="a" />Climbs<br />
+        <input type="radio" id="question4b" name="q4" value="b" />Turns<br /><!-- correct answer -->
+        <input type="radio" id="question4c" name="q4" value="c" />Stalls
+    </p>
+    <p>5. What is one purpose of wing flaps?</p>
+    <p>
+        <input type="radio" id="question5a" name="q5" value="a" />To enable the pilot to make steeper approaches to a landing without increasing the airspeed<br /><!-- correct answer -->
+        <input type="radio" id="question5b" name="q5" value="b" />To relieve the pilot of maintaining continuous pressure on the controls<br />
+        <input type="radio" id="question5c" name="q5" value="c" />To decrease wing area to vary the lift
+    </p>
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>

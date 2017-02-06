@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <title>Converter</title>
+</head>
+<body>
+    <script>
+        function convert() {
+            var far = document.getElementById("far").value;
+            var cel = (far - 32) * 0.5556;
+            document.getElementById("cel").innerHTML = "Celsius: " + cel;
+        }
+    </script>
+<fieldset>
+    <input type="number" id="far" />
+    <label id="cel">Celsuis: </label>
+    <button type="button" onclick="convert()">Submit</button>
+</fieldset>
+</body>

@@ -1,0 +1,42 @@
+html {
+    background: linear-gradient(45deg, #819a9e, #a9ffb6) no-repeat;
+    height: 100%;
+}
+
+body {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+}
+
+main {
+    background-color: #94b0b4;
+    border-radius: 10px;
+}
+
+ol, ul {
+    margin-left: 15px;
+    padding-bottom: 15px;
+}
+
+ol li, ul li {
+    margin-bottom: 10px;
+}
+
+h1 {
+    background-color: #404b4f;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: block;
+    text-align: center;
+    margin: auto 0;
+    padding: 10px 5px;
+    color: white;
+}
+
+h2 {
+    font-style: italic;
+    margin-left: 15px;
+}
+

@@ -11,7 +11,7 @@ public class Exercise12 {
         int[] arr = new int[12];
 
         int count = 0;
-       while(scanner.hasNext()) {
+        while (scanner.hasNext()) {
             arr[count] = scanner.nextInt();
             count++;
         }
@@ -20,7 +20,6 @@ public class Exercise12 {
         System.out.println("average: " + Exercise11.getAverage(arr));
         System.out.println("high: " + Exercise11.getHighest(arr));
         System.out.println("low: " + Exercise11.getLowest(arr));
-
     }
 
 }

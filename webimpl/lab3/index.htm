@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+   <meta charset="utf-8" />   
+   <title>Exercise 2</title>
+   <link rel="stylesheet" href="styles.css" />
+   
+</head>
+<body>
+   <script>
+       var players = ["Russell Westbrook", "James Harden", "LeBron James"];
+       var games = [67, 81, 69];
+       var goals = [627, 647, 624];
+       var throws = [375, 715, 546];
+
+       document.write("<h1>NBA Statistics 2015</h1>");
+       document.write("<table>");
+
+       document.write("<tr>");
+       document.write("<th>Players</th>");
+       document.write("<th>Games</th>");
+       document.write("<th>Field Goals</th>");
+       document.write("<th>Free Throwss</th>");
+       document.write("<th>Total Points</th>");
+       document.write("<th>Average</th>");
+       document.write("</tr>");
+
+       for(var i = 0; i < players.length; i++) {
+           document.write("<tr>");
+           document.write('<td>' + players[i] + '</td>');
+           document.write('<td>' + games[i] + '</td>');
+           document.write('<td>' + goals[i] + '</td>');
+           document.write('<td>' + throws[i] + '</td>');
+           var total = (goals[i] * 2) + (throws[i])
+           document.write('<td>' + total +  '</td>');
+           document.write('<td>' + (total / games[i]) + '</td>');
+           document.write("</tr>");
+       }
+
+       document.write("</table>");
+
+       document.write('<a href="http://espn.go.com/nba/statistics/player/_/stat/scoring-per-game/sort/avgPoints/year/2015/seasontype/2" > More NBA Statistics </a>');
+
+   </script>
+</body>
+</html>
