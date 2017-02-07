@@ -36,8 +36,4 @@ public class GameManager {
 		});
 	}
 	
-	public void render() {
-		game.getNodes().forEach(SpaceNode::draw);
-	}
-	
 }

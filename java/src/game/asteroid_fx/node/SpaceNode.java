@@ -54,11 +54,6 @@ public abstract class SpaceNode extends ImageView {
 	}
 	
 	/**
-	 * The drawing method for this {@link SpaceNode}.
-	 */
-	public abstract void draw();
-	
-	/**
 	 * The logic method for this {@link SpaceNode}.
 	 */
 	public abstract void pulse();

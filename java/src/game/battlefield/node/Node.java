@@ -59,12 +59,6 @@ public abstract class Node extends ImageView {
 	}
 	
 	/**
-	 * The drawing method for this {@link Node}.
-	 * @param delta the delta time difference
-	 */
-	public abstract void draw(float delta);
-	
-	/**
 	 * The logic method for this {@link Node}.
 	 * @param delta the delta time difference
 	 */

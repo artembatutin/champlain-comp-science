@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Chilly Windy</title>
+    <script>
+        function calculation() {
+            var temp = document.getElementById("out").value;
+            var speed = document.getElementById("speed").value;
+            alert((temp - (1.5 * speed)));
+            document.getElementById("chill").innerHTML = "Result: " +(temp - (1.5 * speed)) + " Wind Chill";
+        }
+    </script>
 </head>
 <body>
-$END$
+<form>
+    <label for="out">Outdoor Temperature</label></label><input type="number" id="out" /><br />
+    <label for="speed">Wind speed</label><input type="number" id="speed" /><br />
+    <input type="button" name="submit" value="Click me" onclick="calculation()" />
+    <label id="chill" ></label>
+</form>
 </body>
 </html>
