@@ -1,0 +1,8 @@
+Number: 1111 Code: H Consumption: 150000 Cost: 80.0 Discount: 8.0 GST: 5.6000000000000005 PST: 6.0 Final Cost: 83.6
+Number: 2222 Code: C Consumption: 7965412 Cost: 1.5861649E10 Discount: 1.5861649E9 GST: 1.11031543E9 PST: 1.189623675E9 Final Cost: 1.6575423205E10
+Number: 3333 Code: I Consumption: 3695474 Cost: 1000.0 Discount: 100.0 GST: 70.0 PST: 75.0 Final Cost: 1045.0
+Number: 1235 Code: I Consumption: 7695412 Cost: 2000.0 Discount: 200.0 GST: 140.0 PST: 150.0 Final Cost: 2090.0
+Number: 5478 Code: C Consumption: 3695474 Cost: 1000.0 Discount: 100.0 GST: 70.0 PST: 75.0 Final Cost: 1045.0
+Number: 8523 Code: I Consumption: 12457896 Cost: 3000.0 Discount: 300.0 GST: 210.0 PST: 225.0 Final Cost: 3135.0
+Number: 4444 Code: H Consumption: 45787 Cost: 27.8935 Discount: 1.3946749999999999 GST: 1.952545 PST: 2.0920125 Final Cost: 30.5433825
+4444 E ERROR INVALID CODE
