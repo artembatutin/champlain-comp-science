@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Dynamic Menu</title>
+</head>
+<body id="top">
+	<h1>The Extremadura Region of Western Spain</h1>
+	<h2>Geography Of The Region</h2>
+	<p>The autonomous community of Extremadura is in western Spain alongside the Portuguese border. It borders the Spanish regions of Castilla y Leon, Castilla La Mancha and Andalucía as well as Portugal (to the West). Covering over 40,000 square kilometers it has two provinces: Cáceres in the North and Badajoz in the South.</p>
+	<h2>Where To Stay</h2>
+	<p>There is a wide range of accommodation throughout Extremadura including small inns and guest houses ('Hostals') or think about renting a 'casa rural' (country house) if you are traveling in a group.</p>
+	<h2>Climate</h2>
+	<p>Generally Mediterranean, except for the north, where it is continental. IGenerally known for its extremes, including very hot and dry summers with frequent droughts, and its long and mild winters.</p>
+	<h2>What To See</h2>
+	<p>Extremadura hosts major events all year round including theater, music, cinema, literature and folklore. Spectacular venues include castles, medieval town squares and historic centers. There are special summer theater festivals in the Mérida, Cáceres, Alcántara and Alburquerque.</p>
+	<h2>Gastronomy</h2>
+	<p>The quality of Extremaduran food arises from the fine quality of the local ingredients. In addition to free-range lamb and beef, fabulous cheeses, red and white wines, olive oil, honey and paprika, Extremadura is particularly renowned for Iberian ham. The 'pata negra' (blackfoot) pigs are fed on acorns in the cork-oak forests, the key to producing the world's best ham and cured sausages.</p>
+</body>
+<script>
+var ul = document.createElement("ul");
+var heads = document.getElementsByTagName("h2");
+for(var i = 0; i < heads.length; i++) {
+	var li = document.createElement("li");
+	var a = document.createElement("a");
+	a.setAttribute("href", "#link" + i);
+	heads[i].setAttribute("id", "link" + i);
+	a.appendChild(document.createTextNode(heads[i].innerHTML));
+	li.appendChild(a);
+	ul.appendChild(li);
+}
+document.getElementById("top").insertBefore(ul, document.getElementById("top").firstChild);
+</script>
+</html>

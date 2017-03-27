@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>To do list</title>
+		<meta charset="utf-8">
+
+		<style>
+			ul{list-style:none;padding:0px, margin:0px}
+			li{border: 1px solid #ccc; background-color:#eee; padding: 5px,10px; color:#000; ;width:300px }
+			li span{padding-left:10px}
+			h1{ margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+            header {background: #FFC340;width:400px;color: black;font-size: 48px;text-align: center;line-height: 1.5em;border: 1px solid black;}
+            article {background: white; overflow: auto; width:400px; border: 1px solid black;}
+
+		</style>
+
+	</head>
+	<body>
+		<header>
+          <h1> To Do List </h1>
+       </header>
+		<article>
+			<p> <input type="text" id="inItemText">
+			 <input type="button" id="btnAdd" value="+">
+			 <input type="button" id="btnClr" value="Clear"></p>
+			<ul id="todolist">
+			</ul>
+
+		</article>
+
+		<script>
+		document.getElementById("btnAdd").addEventListener("click", function() {
+			var li = document.createElement("li");
+			var check = document.createElement("input");
+			check.setAttribute("type", "checkbox");
+			li.appendChild(check);
+			li.appendChild(document.createTextNode(document.getElementById("inItemText").value));
+			document.getElementById("todolist").appendChild(li);
+		});
+		document.getElementById("btnClr").addEventListener("click", function() {
+			document.getElementById("todolist").innerHTML = "";
+		});
+		</script>
+	</body>
+</html>

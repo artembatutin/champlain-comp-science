@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Lab Exercise-7</title>
+  <link rel="stylesheet" href="styles-1.css" />
+
+</head>
+
+<body>
+   <header>
+      <h1>
+         Lab Exercise-7
+      </h1>
+   </header>
+
+   <article id="body">
+      <h2>Contact Information</h2>
+      <form>
+        <fieldset id="contactinfo">
+          <label for="nameinput">
+            Name
+            <input type="text" id="nameinput" name="name" placeholder="first and last name" />
+          </label>
+          <label for="emailinput">
+            Email
+            <input type="text" id="emailinput" name="email" placeholder="address@example.com" />
+          </label>
+          <label for="phoneinput">
+            Phone
+            <input type="text" id="phoneinput" name="phone" placeholder="###-###-####" />
+          </label>
+        </fieldset>
+        <fieldset id="submitbutton">
+          <input type="button" value="Submit" id="submit"/>
+        </fieldset>
+     </form>
+   </article>
+   <script>
+   var container = document.createElement("div");
+   var namein = document.getElementById("nameinput");
+   var emailin = document.getElementById("emailinput");
+   var phonein = document.getElementById("phoneinput");
+
+   namein.addEventListener("focus", function() {
+     namein.style.backgroundColor = "red";
+   });
+   emailin.addEventListener("focus", function() {
+     emailin.style.backgroundColor = "red";
+   });
+   phonein.addEventListener("focus", function() {
+     phonein.style.backgroundColor = "red";
+   });
+
+   namein.addEventListener("blur", function() {
+     namein.style.backgroundColor = "yellow";
+   });
+   emailin.addEventListener("blur", function() {
+     emailin.style.backgroundColor = "yellow";
+   });
+   phonein.addEventListener("blur", function() {
+     phonein.style.backgroundColor = "yellow";
+   });
+
+  document.getElementById("body").appendChild(container);
+
+  document.getElementById("submit").addEventListener("click", function() {
+     container.innerHTML = "";
+
+     var inf = document.createElement("p");
+     var names = document.createElement("p");
+     var email = document.createElement("p");
+     var phone = document.createElement("p");
+
+     inf.appendChild(document.createTextNode("You entered these data:"));
+     names.appendChild(document.createTextNode("Name: " + namein.value));
+     email.appendChild(document.createTextNode("Email: " + emailin.value));
+     phone.appendChild(document.createTextNode("Phone: " + phonein.value));
+
+     container.appendChild(inf);
+     container.appendChild(names);
+     container.appendChild(email);
+     container.appendChild(phone);
+   });
+
+
+   </script>
+</body>
+</html>
