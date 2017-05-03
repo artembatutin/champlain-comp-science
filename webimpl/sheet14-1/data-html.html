@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScript: Loading HTML</title>
+    <link rel="stylesheet" href="css/myStyle.css" />
+  </head>
+  <body>
+
+    <header><h1>THE MAKER BUS</h1></header>
+    <h2>The bus stops here.</h2>
+    <section id="content"></section>
+
+   </body>
+   <script>
+		var xhttp = new XMLHttpRequest();
+		xhttp.open("GET", "data/data.html", true);
+		xhttp.send();
+		xhttp.onload = function() {
+			document.getElementById("content").innerHTML = this.responseText;
+		};
+   </script>
+</html>

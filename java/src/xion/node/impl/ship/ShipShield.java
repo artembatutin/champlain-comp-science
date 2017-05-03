@@ -28,15 +28,10 @@ public class ShipShield extends SpaceNode {
 	}
 	
 	@Override
-	public void draw() {
+	public void pulse() {
 		setRotate(ship.getRotate());
 		setLayoutX(ship.getLayoutX() - 15);
 		setLayoutY(ship.getLayoutY() - 18.2);
-	}
-	
-	@Override
-	public void pulse() {
-		
 	}
 	
 	@Override

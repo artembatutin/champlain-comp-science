@@ -33,14 +33,10 @@ public class Bullet extends SpaceNode {
 	}
 	
 	@Override
-	public void draw() {
+	public void pulse() {
 		this.toBack();
 		setLayoutX(getLayoutX() + getVelocityX());
 		setLayoutY(getLayoutY() + getVelocityY());
-	}
-	
-	@Override
-	public void pulse() {
 		//bounds
 		int bound = 20;
 		boolean remove = false;

@@ -23,10 +23,6 @@ public class PowerUp extends SpaceNode {
 	}
 	
 	@Override
-	public void draw() {
-	}
-	
-	@Override
 	public void pulse() {
 	}
 	

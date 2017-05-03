@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>    
+		<title>Book Search</title>
+		<meta charset="utf-8">
+		
+		<style> 
+			
+			div{border: 1px solid #ccc; background-color:#eee; color:#000; ;width:800px }			
+			h1{ margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+            header {background: #FFC340;width:800px;color: black;font-size: 48px;text-align: center;line-height: 1.5em;border: 1px solid black;}
+            article {background: white; overflow: auto;  width:800px; border: 1px solid black;}
+			img { display: block; margin: 0 auto; width:80px; height:100px; }
+			p{padding-top:8px}
+
+			aside {
+				display: inline-block;
+				margin: 10px;
+				padding: 10px;
+				background-color: rgba(255, 255, 255, 0.6);
+				border-radius: 3px;
+				text-align: center;
+			}
+		</style>
+         
+	</head>
+	<body>
+		<header>
+          <h1> Library </h1>
+       </header>
+		<article>	
+			<p> <label for="bookCtg">Book Category</label>
+
+			<select id="bookCtg">
+			   <option value="Computers">Computers</option>
+			   <option value="Children">Children</option>
+			   <option value="Cooking">Cooking</option>
+			</select> 
+			
+			 <input type="button" id="search" value="Find Books">
+			 <input type="button" id="btnClr" value="Clear"></p>
+			 
+			<div id="Content">	
+			</div>
+				
+		</article>		
+	</body>
+	<script>
+		var books;
+		
+		//request data
+		var x = new XMLHttpRequest();
+		x.open("GET", "Books.xml", true);
+		x.send();
+		
+		x.onload = function() {
+			if(x.status === 200) {
+				//store the data
+				var response = x.responseXML;
+				books = response.getElementsByTagName("book");
+				document.getElementById("search").addEventListener("click", find);
+			}
+		};
+		
+	
+		function find(){
+		document.getElementById("Content").innerHTML = "";
+			for(var i = 0; i < books.length; i++) {
+					var book = books[i];
+					//inserting data
+					var cat = book.getAttribute("category");
+					var options = document.getElementById("bookCtg").options;
+					if(cat === options[document.getElementById("bookCtg").selectedIndex].text) {
+						var title = book.getElementsByTagName("title")[0].innerHTML;
+						var author = book.getElementsByTagName("author")[0].innerHTML;
+						var year = book.getElementsByTagName("year")[0].innerHTML;
+						var price = book.getElementsByTagName("price")[0].innerHTML;
+						var picture = book.getElementsByTagName("picture")[0].innerHTML;
+						
+						var con = document.createElement("aside");
+						
+						var header = document.createElement("h3");
+						header.appendChild(document.createTextNode(title));
+						con.appendChild(header);
+						
+						var auth = document.createElement("h1");
+						auth.appendChild(document.createTextNode(author));
+						con.appendChild(auth);
+						
+						var yea = document.createElement("h1");
+						yea.appendChild(document.createTextNode(year));
+						con.appendChild(yea);
+						
+						var pri = document.createElement("h1");
+						pri.appendChild(document.createTextNode(price));
+						con.appendChild(pri);
+						
+						var img = document.createElement("img");
+						img.setAttribute("src", picture);
+						con.appendChild(img);
+						
+						document.getElementById("Content").appendChild(con);
+					}
+				}
+		}
+		
+	</script>
+</html>

@@ -32,15 +32,10 @@ public class ShipDamage extends SpaceNode {
 	}
 	
 	@Override
-	public void draw() {
+	public void pulse() {
 		setRotate(ship.getRotate());
 		setLayoutX(ship.getLayoutX());
 		setLayoutY(ship.getLayoutY());
-	}
-	
-	@Override
-	public void pulse() {
-		
 	}
 	
 	@Override

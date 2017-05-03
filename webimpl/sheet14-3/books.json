@@ -1,0 +1,28 @@
+{
+	"bookstore": [
+	{
+			"category": "Cooking",
+			"title": "Everyday Italian",
+			"author": "Giada De Laurentiis",
+			"picture": "eday.png"
+	},
+	{
+			"category": "Computers",
+			"title": "XQuery Kick Start",
+			"author": "James McGovern",
+			"picture": "XQuery.png"
+	},
+	{
+			"category": "Children",
+			"title": "Harry Potter",
+			"author": "J K. Rowling",
+			"picture": "HP.png"
+	},
+	{
+			"category": "Computers",
+			"title": "Learning XML",
+			"author": "Erik T. Ray",
+			"picture": "XML.png"
+	}
+	]
+}

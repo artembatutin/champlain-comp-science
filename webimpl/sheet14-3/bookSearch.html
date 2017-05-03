@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>    
+		<title>Book Search</title>
+		<meta charset="utf-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<style> 
+			
+			div{border: 1px solid #ccc; background-color:#eee; color:#000; ;width:800px }			
+			h1{ margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+            header {background: #FFC340;width:800px;color: black;font-size: 48px;text-align: center;line-height: 1.5em;border: 1px solid black;}
+            article {background: white; overflow: auto;  width:800px; border: 1px solid black;}
+			img { float: left; width:80px; height:100px; }
+			p{padding-top:8px}
+
+
+		</style>
+         
+	</head>
+	<body>
+		<header>
+          <h1> Library </h1>
+       </header>
+		<article>	
+			<p> <label for="bookCtg">Book Category</label>
+
+			<select id="bookCtg">
+			   <option value="Computers">Computers</option>
+			   <option value="Children">Children</option>
+			   <option value="Cooking">Cooking</option>
+			 
+			</select> 
+			
+			 <input type="button" id="search" value="Find Books">
+			 <input type="button" id="btnClr" value="Clear"></p>
+			 
+			<div id="Content">	
+			</div>
+				
+		</article>		
+		
+	</body>
+</html>

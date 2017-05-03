@@ -30,14 +30,10 @@ public class Meteor extends SpaceNode {
 	}
 	
 	@Override
-	public void draw() {
+	public void pulse() {
 		rotateProperty().set(getRotate() + rotate);
 		setLayoutX(getLayoutX() + getVelocityX());
 		setLayoutY(getLayoutY() + getVelocityY());
-	}
-	
-	@Override
-	public void pulse() {
 		//bounds
 		if(getLayoutX() < -bound) {
 			setLayoutX(Game.WIDTH - bound);

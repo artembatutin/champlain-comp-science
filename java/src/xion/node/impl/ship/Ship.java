@@ -92,14 +92,8 @@ public class Ship extends SpaceNode {
 	}
 	
 	@Override
-	public void draw() {
-	}
-	
-	@Override
 	public void pulse() {
 		handleKeys();
-		if(primary)
-			System.out.println(powerShot);
 		setLayoutX(getLayoutX() + getVelocityX());
 		setLayoutY(getLayoutY() + getVelocityY());
 		revertVelocityX(0.025f);

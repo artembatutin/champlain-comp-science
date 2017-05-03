@@ -57,15 +57,11 @@ public class GameLoop extends AnimationTimer {
 		float secondsElapsedCapped = Math.min(secondsElapsed, STEP);//max step.
 		accumulatedTime += secondsElapsedCapped;
 		previousTime = currentTime;
-		
 		//eating steps depending on time.
 		while(accumulatedTime >= STEP) {
 			manager.pulse();//pulsing a step.
 			accumulatedTime -= STEP;
 		}
-		
-		//rendering the scene.
-		manager.render();
 		
 		//frames per second counter.
 		accumulatedTimeFPS += secondsElapsed;
