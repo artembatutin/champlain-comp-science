@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'amaranthregular';
+    src: url('./fonts/amaranth-regular-webfont.woff2') format('woff2'), url('./fonts/amaranth-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Page layout modifications */
+
+html {
+    position: relative;
+    min-height: 100%;
+    font-family: 'amaranthregular';
+}
+
+body {
+    margin-bottom: 60px;
+	background: #2ecc70;
+	background: -moz-linear-gradient(-45deg, #2ecc70 0%, #1abc9c 100%);
+	background: -webkit-gradient(left top, right bottom, color-stop(0%, #2ecc70), color-stop(100%, #1abc9c));
+	background: -webkit-linear-gradient(-45deg, #2ecc70 0%, #1abc9c 100%);
+	background: -o-linear-gradient(-45deg, #2ecc70 0%, #1abc9c 100%);
+	background: -ms-linear-gradient(-45deg, #2ecc70 0%, #1abc9c 100%);
+	background: linear-gradient(135deg, #2ecc70 0%, #1abc9c 100%);
+}
+
+body>.container {
+    padding-top: 80px;
+}
+
+.lead {
+	padding-left: 30px;
+}
+
+.right {
+	display: block;
+	text-align: right;
+}
+
+/* Navigation styling */
+
+.navbar {
+	line-height: 2;
+	background-color: #1d3b3f;
+	border-bottom: solid 10px rgba(21, 41, 44, 0.5);
+}
+
+.navbar-inverse .navbar-toggler {
+	background-color: rgba(0, 0, 0, 0.2);
+	border: solid 1px rgba(48, 142, 100, 0.5);
+	transition: border 0.5s;
+}
+
+.navbar-inverse .navbar-toggler:hover {
+	border: solid 1px rgba(48, 142, 100, 1);
+}
+
+/* Footer styling */
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    line-height: 60px;
+    background-color: #1d3b3f;
+	border-top: solid 10px rgba(21, 41, 44, 0.5);
+}
+
+.footer>.container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Devider line */
+
+.devide {
+	margin-top: 40px;
+	border-top: dashed 5px #1d3b3f;
+}
+
+.btn-primary {
+    color: #fff;
+	margin: 0 2%;
+	border-radius: 50%;
+	width: 20%;
+	padding-top: 8%;
+	padding-bottom: 8%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: #228a64;
+}
+
+.btn-primary:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-color: #228a64;
+}
+
+/* Contact container */
+
+contact {
+    padding: .2rem .4rem;
+    font-size: 85%;
+	font-style: italic;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: .25rem;
+}
+
+@media (max-width: 776px) {
+	.btn-primary {
+	    width: 90%;
+		margin: 2% 2%;
+		border-radius: 10px;
+		padding-top: 3%;
+		padding-bottom: 3%;
+	}
+}
