@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    margin-bottom: 60px;
+
 	background: #2ecc70;
 	background: -moz-linear-gradient(-45deg, #2ecc70 0%, #1abc9c 100%);
 	background: -webkit-gradient(left top, right bottom, color-stop(0%, #2ecc70), color-stop(100%, #1abc9c));
@@ -27,6 +27,7 @@ body {
 
 body>.container {
     padding-top: 80px;
+    padding-bottom:100px;
 }
 
 .lead {
@@ -59,7 +60,7 @@ body>.container {
 /* Footer styling */
 
 .footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 80px;
@@ -101,7 +102,7 @@ body>.container {
 contact {
     padding: .2rem .4rem;
     font-size: 85%;
-	font-style: italic;
+	  font-style: italic;
     color: #ffffff;
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: .25rem;
@@ -115,4 +116,10 @@ contact {
 		padding-top: 3%;
 		padding-bottom: 3%;
 	}
+
 }
+
+@media (max-width: 992px){
+
+
+  }
