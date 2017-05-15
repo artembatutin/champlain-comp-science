@@ -125,6 +125,15 @@ body>.container {
 	border-top: dashed 5px #1d3b3f;
 }
 
+form {
+	width: 80%;
+	display: block;
+	margin: 40px auto 40px auto;
+	padding: 15px 30px 15px 15px;
+	border-radius: 15px;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
 
 /* Buttons styling */
 
