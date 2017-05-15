@@ -15,46 +15,83 @@ html {
 }
 
 body {
-
-	background: #2ecc70;
-	background: -moz-linear-gradient(-45deg, #2ecc70 0%, #1abc9c 100%);
-	background: -webkit-gradient(left top, right bottom, color-stop(0%, #2ecc70), color-stop(100%, #1abc9c));
-	background: -webkit-linear-gradient(-45deg, #2ecc70 0%, #1abc9c 100%);
-	background: -o-linear-gradient(-45deg, #2ecc70 0%, #1abc9c 100%);
-	background: -ms-linear-gradient(-45deg, #2ecc70 0%, #1abc9c 100%);
-	background: linear-gradient(135deg, #2ecc70 0%, #1abc9c 100%);
+    background: #2ecc70;
+    background: -moz-linear-gradient(-45deg, #2ecc70 0%, #1abc9c 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, #2ecc70), color-stop(100%, #1abc9c));
+    background: -webkit-linear-gradient(-45deg, #2ecc70 0%, #1abc9c 100%);
+    background: -o-linear-gradient(-45deg, #2ecc70 0%, #1abc9c 100%);
+    background: -ms-linear-gradient(-45deg, #2ecc70 0%, #1abc9c 100%);
+    background: linear-gradient(135deg, #2ecc70 0%, #1abc9c 100%);
 }
 
 body>.container {
     padding-top: 80px;
-    padding-bottom:100px;
+    padding-bottom: 100px;
 }
 
 .lead {
-	padding-left: 30px;
+    padding-left: 30px;
 }
 
 .right {
-	display: block;
-	text-align: right;
+    display: block;
+    text-align: right;
 }
+
 
 /* Navigation styling */
 
 .navbar {
-	line-height: 2;
-	background-color: #1d3b3f;
-	border-bottom: solid 10px rgba(21, 41, 44, 0.5);
+    line-height: 2;
+    background-color: #1d3b3f;
+    border-bottom: solid 10px rgba(21, 41, 44, 0.5);
 }
 
 .navbar-inverse .navbar-toggler {
-	background-color: rgba(0, 0, 0, 0.2);
-	border: solid 1px rgba(48, 142, 100, 0.5);
-	transition: border 0.5s;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: solid 1px rgba(48, 142, 100, 0.5);
+    transition: border 0.5s;
 }
 
 .navbar-inverse .navbar-toggler:hover {
-	border: solid 1px rgba(48, 142, 100, 1);
+    border: solid 1px rgba(48, 142, 100, 1);
+}
+
+.navbar-inverse .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, .3);
+    transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    -webkit-transition: color 0.5s;
+    -o-transition: color 0.5s;
+}
+
+.navbar-inverse .navbar-nav .nav-link:focus, .navbar-inverse .navbar-nav .nav-link:hover {
+    color: white;
+}
+
+
+/* Description height */
+
+#desc {
+    height: 6em;
+    overflow: hidden;
+}
+
+.feature {
+    text-align: center;
+	color: #1d3b3f;
+    text-shadow: rgba(21, 41, 44, 0.5) 1px 1px 0;
+}
+
+.feature span {
+	overflow: hidden;
+    white-space: nowrap;
+}
+
+.feature img {
+	margin-top: 10px;
+	border-radius: 50%;
+	border: dashed 3px #1d3b3f;
 }
 
 /* Footer styling */
@@ -66,7 +103,7 @@ body>.container {
     height: 80px;
     line-height: 60px;
     background-color: #1d3b3f;
-	border-top: solid 10px rgba(21, 41, 44, 0.5);
+    border-top: solid 10px rgba(21, 41, 44, 0.5);
 }
 
 .footer>.container {
@@ -74,20 +111,30 @@ body>.container {
     padding-left: 15px;
 }
 
+
 /* Devider line */
 
 .devide {
-	margin-top: 40px;
+    margin-top: 60px;
+}
+
+.sep {
+	display: block;
+	width: 100%;
+	margin-bottom: 30px;
 	border-top: dashed 5px #1d3b3f;
 }
 
+
+/* Buttons styling */
+
 .btn-primary {
     color: #fff;
-	margin: 0 2%;
-	border-radius: 50%;
-	width: 20%;
-	padding-top: 8%;
-	padding-bottom: 8%;
+    margin: 0 2%;
+    border-radius: 5%;
+    width: 20%;
+    padding-top: 30px;
+    padding-bottom: 30px;
     background-color: rgba(0, 0, 0, 0.3);
     border-color: #228a64;
 }
@@ -97,29 +144,62 @@ body>.container {
     border-color: #228a64;
 }
 
-/* Contact container */
+.btn-outline-primary {
+    margin: 20px;
+    color: #1d3b3f;
+    border-color: #1d3b3f;
+}
+
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #1d3b3f;
+    border-color: #1d3b3f;
+}
+
+
+/* Contact and form styling */
 
 contact {
     padding: .2rem .4rem;
     font-size: 85%;
-	  font-style: italic;
+    font-style: italic;
     color: #ffffff;
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: .25rem;
 }
 
-@media (max-width: 776px) {
-	.btn-primary {
-	    width: 90%;
-		margin: 2% 2%;
-		border-radius: 10px;
-		padding-top: 3%;
-		padding-bottom: 3%;
-	}
-
+.form-control {
+    color: #1d3b3f;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 0 15px 20px 15px
 }
 
-@media (max-width: 992px){
+.form-control:focus {
+    color: #1d3b3f;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: #5cb3fd;
+    outline: 0;
+}
 
+@media (max-width: 776px) {
+    .btn-primary {
+        width: 90%;
+        margin: 10px 20px;
+        border-radius: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
 
-  }
+	.feature {
+		border-bottom: none;
+	}
+
+	.feature img {
+		display: none;
+	}
+
+	.feature span {
+		overflow: visible;
+	    white-space: normal;
+	}
+}

@@ -1,0 +1,15 @@
+{
+    "services": [{
+        "id": "serv1",
+        "desc": "Cloud hosting: a simple cloud hosting to support every user's needs. Dynamic sharable hosting at a very competitive low cost."
+    }, {
+        "id": "serv2",
+        "desc": "Virtual Private Server: providing mid-performance a low prices. This shrable hosting service will fullfil any customer's mediocre needs."
+    }, {
+        "id": "serv3",
+        "desc": "Dedicated hosting: low lentancy and true power-horse performance. This server is dedicated only for your usage with high bandwidth speeds."
+    }, {
+        "id": "serv4",
+        "desc": "Colocation: mass data storage providing confort and reliability for any occasion. Memorial pictures of your family or your latest business backups."
+    }]
+}

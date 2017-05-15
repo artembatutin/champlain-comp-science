@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="HostingCompany">
 	<meta name="author" content="ArtemBatutin,FrancoisParent">
-	<link rel="icon" href="../../favicon.ico">
+	<link rel="icon" href="./favicon.ico">
 
 	<title>Equilinox Hosting - Index</title>
 
@@ -26,14 +26,14 @@
 		<a class="navbar-brand" href="#">Equilinox Hosting</a>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="#">About us</a>
+				<li class="nav-item">
+					<a class="nav-link" href="#about">About us</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Services</a>
+					<a class="nav-link" href="#services">Services</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Support</a>
+					<a class="nav-link" href="#support">Support</a>
 				</li>
 			</ul>
 		</div>
@@ -42,40 +42,55 @@
 	<!-- Content of the page -->
 	<div class="container">
 
-		<div class="row">
-			<div class="mt-3">
-				<h1>About Us</h1>
-			</div>
+		<div id="about" class="row">
+			<h1>About Us</h1>
+			<div class="sep"></div>
 			<p class="lead">Equilinox is a new company focused on bringing the best possible services to its customers. These services range from webhosting to on-site dedicated servers, making sure to give you as many options as possible for the highest quality. Thanks to the
 				dedication of its employees, Equilinox can guarantee a great service rendered and we are so confident in our ability to satisfy our clients that we will offer a refund if you find yourself unsatisfied by what we can bring to the table.</p>
+			<div class="row" style="width: 100%">
+				<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 feature">
+					<span>Finest Reliability</span>
+					<img src="./assets/images/rel.png" alt="Reliability" />
+				</div>
+				<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 feature">
+					<span>Powerful Performance</span>
+					<img src="./assets/images/perf.png" alt="Performance" />
+				</div>
+				<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 feature">
+					<span>Competitive Prices</span>
+					<img src="./assets/images/price.png" alt="Low prices" />
+				</div>
+				<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 feature">
+					<span>Five Star Support</span>
+					<img src="./assets/images/sup.png" alt="Support" />
+				</div>
+			</div>
 		</div>
 
-		<div class="row devide">
-			<div class="mt-3">
-				<h1>Services</h1>
-			</div>
-			<p class="lead">We offer different types of web hosting to accommodate our clients with the best choice for them. Below, you will find the options that we can provide you and the details that ensue.</p>
-			<button type="button" class="btn btn-primary btn-lg">Cloud</button>
-			<button type="button" class="btn btn-primary btn-lg">Virtual</button>
-			<button type="button" class="btn btn-primary btn-lg">Dedicated</button>
-			<button type="button" class="btn btn-primary btn-lg">Colocation</button>
+		<div id="services" class="row devide">
+			<h1>Services</h1>
+			<div class="sep"></div>
+			<p id="desc" class="lead">We offer different types of web hosting to accommodate our clients with the best choice for them. Below, you will find the options that we can provide you and the details that ensue.</p>
+			<button id="serv1" type="button" class="btn btn-primary btn-lg">Cloud</button>
+			<button id="serv2" type="button" class="btn btn-primary btn-lg">Virtual</button>
+			<button id="serv3" type="button" class="btn btn-primary btn-lg">Dedicated</button>
+			<button id="serv4" type="button" class="btn btn-primary btn-lg">Colocation</button>
 		</div>
 
-		<div class="row devide">
-			<div class="mt-3">
-				<h1 class="float-right">Support</h1>
-			</div>
+		<div id="support" class="row devide">
+			<h1 class="float-right">Support</h1>
+			<div class="sep"></div>
 			<p class="lead col-sm-10 col-lg-5 col-md-5 mt-3 third">Here at Equilinox, your experience is our top priority. If you have any questions or concerns, please contact us at
-				<contact>(450)-231-5252</contact> or by filling this form:</p>
-				<div class="col-sm-11 col-lg-5 col-md-4 mt-5 third">
-			<form action="/html/tags/html_form_tag_action.cfm" class="form-inline">
-				<label class="mr-sm-4 mb-0 sr-only" for="first_name">First Name</label>
-				<input type="text" class="form-control mr-sm-4 mb-4 mb-sm-0" id="first_name" name="first_name" placeholder="First name">
-				<label class="mr-sm-4 mb-0 sr-only" for="last_name">Last Name</label>
-				<input type="text" class="form-control mr-sm-4 mb-4 mb-sm-0" id="last_name" name="last_name" placeholder="Last name">
-				<button type="submit" class="btn btn-default mt-2 mt-sm-0">Submit</button>
-			</form>
-		</div>
+				<contact>(450)-231-5252</contact> or via the contact form.</p>
+			<div class="col-sm-11 col-lg-5 col-md-4 mt-5 third">
+				<form action="/html/tags/html_form_tag_action.cfm" class="form-inline">
+					<label class="mr-sm-4 mb-0 sr-only" for="first_name">First Name</label>
+					<input type="text" class="form-control mr-sm-4 mb-4 mb-sm-0" id="first_name" name="first_name" placeholder="First name">
+					<label class="mr-sm-4 mb-0 sr-only" for="last_name">Email</label>
+					<input type="email" class="form-control mr-sm-4 mb-4 mb-sm-0" id="last_name" name="last_name" placeholder="Email">
+					<button type="submit" class="btn btn-outline-primary mt-2">Contact</button>
+				</form>
+			</div>
 
 		</div>
 
@@ -83,20 +98,21 @@
 
 	<footer class="footer">
 		<div class="container">
-			<span class="text-muted">All rights reserved</span>
+			<span class="text-muted">Equilinox - All rights reserved &copy; Created by Artem Batutin and Francois Parent</span>
 		</div>
 	</footer>
 
 
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<!-- Bootstrap & implementations -->
+	<script src="./assets/jquery-3.2.1.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	<script>
 		window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
 	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<!-- Custom implementations -->
+	<script src="./assets/smoothscroll.js"></script>
+	<script src="./services/handler.js"></script>
 </body>
 
 </html>
