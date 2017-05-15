@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>    
+		<title>Book Search</title>
+		<meta charset="utf-8">
+		
+		<style> 
+			
+			div{border: 1px solid #ccc; background-color:#eee; color:#000; ;width:800px }			
+			h1{ margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+            header {background: #FFC340;width:800px;color: black;font-size: 48px;text-align: center;line-height: 1.5em;border: 1px solid black;}
+            article {background: white; overflow: auto;  width:800px; border: 1px solid black;}
+			img { float: left; width:80px; height:100px; }
+			p{padding-top:8px}
+			
+		</style>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<header>
+          <h1> Library </h1>
+       </header>
+		<article>				
+
+	        Select a book category:<br><br>
+	        <input type="radio" id="Cooking" name="book" value="Cooking">Cooking
+	        <input type="radio" id="Children" name="book" value="Children">Children
+			<input type="radio" id="Computers" name="book" value="Computers">Computers
+
+            
+			
+			 <input type="button" id="search" onClick="sub()" value="Find Books">
+			 
+			
+			 
+			<div id="content">
+			</div>
+				
+		</article>
+		<script>
+			function sub() {
+				var cat = $('input[name=book]:checked').val();
+				var list = $("<ul></ul>");
+				$.ajax({
+					type: 'GET',
+					url: './Books.json',
+					dataType: 'JSON',
+					success: function(data) {
+						$.each(data.bookstore, (function(index, bookstore) {
+							if(cat == bookstore.category) {
+								list.append("<li>" + bookstore.title + " by " + bookstore.author + "</li>")
+							}
+						}));
+						$('#content').html(list);
+					}
+				});
+			}
+		</script>
+	</body>
+</html>

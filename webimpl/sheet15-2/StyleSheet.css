@@ -1,0 +1,75 @@
+﻿body
+{
+    color: #3e3935;
+    font-family: Helvetica, Arial, Sans-Serif;
+    font-size: 90%;
+    line-height: 1.4em;
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 15px;
+    text-align: center;
+}
+
+p
+{
+    margin: 12px 0;
+     line-height: 1.4em;
+}
+
+h1, dl
+{
+    padding: 0;
+    text-align: left;
+    line-height: 1em;
+}
+.title
+{
+    font-weight: bold;
+    font-size: 1.25em;
+    color: #4a887d;
+}
+
+.bookImage
+{
+    clear: left;
+    width: 150px;
+}
+h1
+{
+    font-size: 2em;
+    color: #4a887d;
+    margin-bottom: 1em;
+}
+
+dl, dd, dt, img, p
+{
+    margin: 0;
+    padding: 0;
+}
+
+dt
+{
+    clear: left;
+    width: 150px;
+    float: left;
+    height: 1%;
+    margin-bottom: 20px;
+}
+
+
+dd
+{
+    margin-left: 170px;
+    margin-bottom: 20px;
+    height: 1%;
+}
+
+dd:after
+{
+    content: ".";
+    visibility: hidden;
+    clear: both;
+    display: block;
+    height: 0;
+}
+

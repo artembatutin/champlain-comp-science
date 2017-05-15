@@ -100,8 +100,8 @@ body>.container {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 80px;
-    line-height: 60px;
+    height: 50px;
+    line-height: 40px;
     background-color: #1d3b3f;
     border-top: solid 10px rgba(21, 41, 44, 0.5);
 }
@@ -149,6 +149,8 @@ body>.container {
     color: #1d3b3f;
     border-color: #1d3b3f;
 }
+
+/* Contact container */
 
 .btn-outline-primary:hover {
     color: #fff;

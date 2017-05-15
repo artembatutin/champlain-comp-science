@@ -5,19 +5,27 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<SplitPane dividerPositions="0.7581699346405228" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="461.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sem2.fproject.MainFX">
-  <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="143.0" scaleShape="false">
-         <children>
-            <ListView fx:id="view" layoutX="2.0" layoutY="1.0" prefHeight="398.0" prefWidth="272.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-         </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="130.0" prefHeight="398.0" prefWidth="130.0" scaleShape="false" SplitPane.resizableWithParent="false">
-         <children>
-            <Button onAction="#addAction" layoutX="35.0" layoutY="25.0" mnemonicParsing="false" text="File Add" textAlignment="CENTER" />
-            <Button onAction="#excludeAction" layoutX="26.0" layoutY="61.0" mnemonicParsing="false" text="File Exlcude" textAlignment="CENTER" />
-            <Button onAction="#sortAction" layoutX="46.0" layoutY="97.0" mnemonicParsing="false" text="Sort" textAlignment="CENTER" />
-            <Button onAction="#manAddAction" layoutX="25.0" layoutY="166.0" mnemonicParsing="false" text="Manual Add" textAlignment="CENTER" />
-            <Button onAction="#manRemoveAction" layoutX="15.0" layoutY="199.0" mnemonicParsing="false" text="Manual Remove" textAlignment="CENTER" />
-         </children></AnchorPane>
-  </items>
+<SplitPane dividerPositions="0.7581699346405228" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+           minWidth="-Infinity" prefHeight="400.0" prefWidth="461.0" xmlns="http://javafx.com/javafx/8.0.131"
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="sem2.fproject.MainFX">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="143.0" scaleShape="false">
+            <children>
+                <ListView fx:id="view" layoutX="2.0" layoutY="1.0" prefHeight="398.0" prefWidth="272.0"
+                          AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                          AnchorPane.topAnchor="0.0"/>
+            </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="130.0" prefHeight="398.0" prefWidth="130.0" scaleShape="false"
+                    SplitPane.resizableWithParent="false">
+            <children>
+                <Button layoutX="36.0" layoutY="74.0" mnemonicParsing="false" onAction="#addAction" text="File Add"
+                        textAlignment="CENTER"/>
+                <Button layoutX="21.0" layoutY="170.0" mnemonicParsing="false" onAction="#excludeAction"
+                        text="File Exlcude" textAlignment="CENTER"/>
+                <Button layoutX="47.0" layoutY="268.0" mnemonicParsing="false" onAction="#sortAction" text="Sort"
+                        textAlignment="CENTER"/>
+            </children>
+        </AnchorPane>
+    </items>
 </SplitPane>
