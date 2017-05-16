@@ -14,6 +14,17 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 	<!-- Style -->
 	<link href="./assets/style.css" rel="stylesheet">
+	<!-- Bootstrap & implementations -->
+	<script src="./assets/jquery-3.2.1.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<script>
+		window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+	</script>
+	<!-- Custom implementations -->
+	<script src="./assets/smoothscroll.js"></script>
+	<script src="./services/handler.js"></script>
+	<script src="xml.js"></script>
 </head>
 
 <body>
@@ -44,11 +55,13 @@
 
 		<div id="about" class="row">
 			<h1>About Us</h1>
+			<div id="friend">
+			</div>
 			<div class="sep"></div>
 			<p class="lead">Equilinox is a new company focused on bringing the best possible services to its customers. These services range from webhosting to on-site dedicated servers, making sure to give you as many options as possible for the highest quality. Thanks to the
 				dedication of its employees, Equilinox can guarantee a great service rendered and we are so confident in our ability to satisfy our clients that we will offer a refund if you find yourself unsatisfied by what we can bring to the table.</p>
 			<div class="row" style="width: 100%">
-				<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 feature">
+				<div class="col-sm-3 col-md-3 col-lg-3 col-xl-2 feature">
 					<span>Finest Reliability</span>
 					<img src="./assets/images/rel.png" alt="Reliability" />
 				</div>
@@ -89,12 +102,16 @@
 					<input type="text" class="form-control mr-sm-4 mb-4 mb-sm-0" id="first_name" name="first_name" placeholder="First name">
 					<label class="mr-sm-4 mb-0 sr-only" for="last_name">Email</label>
 					<input type="email" class="form-control mr-sm-4 mb-4 mb-sm-0" id="last_name" name="last_name" placeholder="Email">
-					<button type="submit" class="btn btn-outline-primary mt-2">Contact</button>
+					<button type="submit" class="btn btn-outline-primary mt-2" id="btnclick">Contact</button>
 			</div>
-		</div>
+
 		</div>
 
-	</div>
+		</div>
+
+
+
+
 
 	<footer class="footer">
 		<div class="container">
@@ -103,16 +120,39 @@
 	</footer>
 
 
-	<!-- Bootstrap & implementations -->
-	<script src="./assets/jquery-3.2.1.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
 	<script>
-		window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+
+	/* Friend div is in "AboutUs" */
+	$(document).ready(function(){
+	        $("#friend").append("<ul></ul>");
+					function load(){
+	        $.ajax({
+	            type: "GET",
+	            url: "BookList.xml",
+	            dataType: "xml",
+	            success: function(xml){
+	                $(xml).find('Book').each(function(){
+	                var sTitle = $(this).find('Title').text();
+	                var sPublisher = $(this).find('Publisher').text();
+	                $("<li></li>").html(sTitle + ", " + sPublisher).appendTo("#friend ul");
+	            });
+	            },
+	            error: function() {
+	            alert("An error occurred while processing XML file.");
+	            }
+	        });
+	    }});
+
+/* btnclick is the last button */
+
+			$("#btnclick").on("click", load);
+
+
+
 	</script>
-	<!-- Custom implementations -->
-	<script src="./assets/smoothscroll.js"></script>
-	<script src="./services/handler.js"></script>
+
 </body>
 
 </html>
