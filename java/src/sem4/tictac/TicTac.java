@@ -3,7 +3,6 @@ package sem4.tictac;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -126,21 +125,5 @@ public class TicTac extends Application {
 				e.printStackTrace();
 			}
 		}*/
-	}
-
-	enum CrossType {
-		X("tac-x.png"),
-		O("tic-o.png"),
-		NONE("toe.png");
-
-		private final String img;
-
-		CrossType(String img) {
-			this.img = img;
-		}
-
-		Image getImage() {
-			return new Image(getClass().getResource(img).toString());
-		}
 	}
 }
