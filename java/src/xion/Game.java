@@ -73,7 +73,7 @@ public class Game extends Application {
 		GameLoop loop = new GameLoop(manager);
 		loop.start();
 		
-		//Spawning randomely power ups.
+		//Spawning randomly power ups.
 		Timeline spawn = new Timeline(new KeyFrame(Duration.seconds(10), event -> {
 			add(new PowerUp(PowerUp.PowerType.random(), gen.nextInt(WIDTH - 40) + 20, gen.nextInt(HEIGHT - 40) + 20));
 		}));
